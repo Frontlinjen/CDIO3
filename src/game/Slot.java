@@ -3,19 +3,31 @@ package game;
 
 public class Slot {
 
-	private int value;
+	private int price;
 	private int id;
+	private int rent;
+	//private String type;
 	
-	public Slot(int i, int val){
-		value = val;
+	public enum Field {
+		TERRITORY, REFUGE, LABORCAMP, TAX, FLEET
+	}
+		
+	
+	
+	public Slot(int i, int pr, int ren){
+		price = pr;
 		id = i;
+		rent = ren;
 	}
 
-	public int getValue() {
-		return value;
+	public int getPrice() {
+		return price;
 	}
 	public String getName() {
 		return Translator.getString("SLOT" + id);
+	}
+	public int getRent(){
+		return rent;
 	}
 	public String getDescription() {
 		return Translator.getString("SLOTDSC" + id);
@@ -23,7 +35,7 @@ public class Slot {
 
 	@Override
 	public String toString() {
-		return "Slot [value=" + value + ", id=" + id + ", title" + getName() + "]";
+		return "Slot [Price=" + price + ", rent=" + rent + ", id=" + id + ", title" + getName() + "]";
 	}
 	
 	

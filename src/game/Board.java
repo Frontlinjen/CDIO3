@@ -40,27 +40,36 @@ public class Board {
 			return (!m.find());
 		
 	}
-	private void setupPlayers(){
-		String user1 = GUI.getUserString(Translator.getString("ENTERNAME1"));
-		while(!verifyName(user1))
+	private boolean setupPlayer(String user){
+		if (!verifyName(user) || user.length() > 15)
 		{
-			user1 = GUI.getUserString(Translator.getString("EMPTYNAMEERROR"));
+			return false;
 		}
-		createPlayer(user1);
-		String user2 = GUI.getUserString(Translator.getString("ENTERNAME2"));
-		//Player2 cannot be called the same as player1
-		while(!verifyName(user2) || user2.equals(user1))
-		{
-			if(!verifyName(user2))
+		for(Player i : players) {
+			if (i.getName().equals(user)){
+				return false;
+			}
+		}
+		createPlayer(user);
+		return true;
+	}
+	
+	private void setupPlayers(int i) {
+		int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
+		for(int j = 0; j < amount; j++) {
+			String user;
+			if(players.isEmpty())
 			{
-				user2 = GUI.getUserString(Translator.getString("EMPTYNAMEERROR"));
+				 user = GUI.getUserString("ENTERNAME1");
 			}
 			else
 			{
-				user2 = GUI.getUserString(Translator.getString("NAMEERROR"));
+				user = GUI.getUserString("ENTERNAME2");
 			}
+		while(setupPlayer(user) == false) {
+			user = GUI.getUserString("NAMEERROR");
 		}
-		createPlayer(user2);
+		}
 	}
 
 	/**
@@ -118,7 +127,8 @@ public class Board {
 	}
 	public void startGame(){
 		initializeBoard();
-		setupPlayers();
+		int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
+		setupPlayers(amount);
 		boolean running = true;
 		while(running)
 		{

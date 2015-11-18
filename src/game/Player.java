@@ -3,18 +3,20 @@ package game;
 import desktop_resources.GUI;
 
 public class Player {
-
+	
 	private String name;
+	private int position;
 	/**
 	 * Each player has their own set of dice which keeps track of their rolls. 
 	 */
 	private BaseDice dice = new DicePair();
 	private Account account = new Account();
-
+	
+	
 	public Player(String s)
 	{
 		name = s;
-		setPoints(1000);
+		setPoints(30000);
 	}
 	public String getName()
 	{
@@ -50,7 +52,7 @@ public class Player {
 	}
 	
 	public void move (int afstand){
-		final int ANTALSLOTS = 21;
+		final int ANTALSLOTS = 40;
 		position =+ afstand; //læg den flyttede afstand til den gamle position
 		
 		if(position >= ANTALSLOTS){ //Bestem om den nye position er overskrider spillepladen. Hvis den gør trækker man antallet af pladser fra positionen for at finde den nye position

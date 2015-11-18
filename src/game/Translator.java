@@ -5,7 +5,7 @@ import java.util.ResourceBundle;
 
 public class Translator {
 	static ResourceBundle strings;
-	public static String getString(String keyword)
+	public static String getString(String keyword, Object... args)
 	{
 		
 		//If not previous set, use default locale(da, DK)
@@ -13,7 +13,14 @@ public class Translator {
 		{
 			setLocale(new Locale("en", "GB"));
 		}
-		return strings.getString(keyword);
+		if(args!=null)
+		{
+			return String.format(strings.getString(keyword), args);
+		}
+		else
+		{
+			return strings.getString(keyword);
+		}
 	}
 	@Override
 	public String toString() {

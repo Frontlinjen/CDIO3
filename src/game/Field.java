@@ -1,7 +1,7 @@
 package game;
 
 
-public class Slot {
+public class Field {
 
 	private int price;
 	private int id;
@@ -15,22 +15,15 @@ public class Slot {
 		
 	
 	
-	public Slot(int i, int pr, int ren, Types type){
-		price = pr;
+	public Field(int i, Types type){
 		id = i;
-		rent = ren;
 		this.type = type;
 	}
 
-	public int getPrice() {
-		return price;
-	}
 	public String getName() {
 		return Translator.getString("SLOT" + id);
 	}
-	public int getRent(){
-		return rent;
-	}
+
 	public String getDescription() {
 		return Translator.getString("SLOTDSC" + id);
 	}

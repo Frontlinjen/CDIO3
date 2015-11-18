@@ -3,18 +3,20 @@ package game;
 import desktop_resources.GUI;
 
 public class Player {
-
+	
 	private String name;
+	private int position;
 	/**
 	 * Each player has their own set of dice which keeps track of their rolls. 
 	 */
 	private BaseDice dice = new DicePair();
 	private Account account = new Account();
-
+	
+	
 	public Player(String s)
 	{
 		name = s;
-		setPoints(1000);
+		setPoints(30000);
 	}
 	public String getName()
 	{

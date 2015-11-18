@@ -30,7 +30,7 @@ public class Field {
 
 	@Override
 	public String toString() {
-		return "Slot [Price=" + price + ", rent=" + rent + ", id=" + id + ", title" + getName() + "]";
+		return "Slot [id=" + id + ", title" + getName() + "]";
 	}
 	
 	

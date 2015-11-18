@@ -41,20 +41,35 @@ public class Board {
 		
 	}
 	private boolean setupPlayer(String user){
-		if (!verifyName(user))
+		if (!verifyName(user) || user.length() > 15)
 		{
-			user = GUI.getUserString(Translator.getString("EMPTYNAMEERROR"));
 			return false;
 		}
-		
 		for(Player i : players) {
 			if (i.getName().equals(user)){
-				user = GUI.getUserString(Translator.getString("NAMEERROR"));
 				return false;
 			}
 		}
 		createPlayer(user);
 		return true;
+	}
+	
+	private void setupPlayers(int i) {
+		int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
+		for(int j = 0; j < amount; j++) {
+			String user;
+			if(players.isEmpty())
+			{
+				 user = GUI.getUserString("ENTERNAME1");
+			}
+			else
+			{
+				user = GUI.getUserString("ENTERNAME2");
+			}
+		while(setupPlayer(user) == false) {
+			user = GUI.getUserString("NAMEERROR");
+		}
+		}
 	}
 
 	/**
@@ -112,7 +127,8 @@ public class Board {
 	}
 	public void startGame(){
 		initializeBoard();
-		setupPlayers();
+		int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
+		setupPlayers(amount);
 		boolean running = true;
 		while(running)
 		{

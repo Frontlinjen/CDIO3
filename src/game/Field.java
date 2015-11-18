@@ -3,9 +3,7 @@ package game;
 
 public class Field {
 
-	private int price;
 	private int id;
-	private int rent;
 	private Types type;
 	//private String type;
 	

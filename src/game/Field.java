@@ -1,7 +1,7 @@
 package game;
 
 
-public class Field {
+public abstract class Field {
 
 	private int id;
 	private Types type;
@@ -31,5 +31,6 @@ public class Field {
 		return "Slot [id=" + id + ", title" + getName() + "]";
 	}
 	
-	
+	public abstract void landOnField (Player player);
 }
+

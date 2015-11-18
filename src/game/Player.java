@@ -48,6 +48,14 @@ public class Player {
 	public String toString() {
 		return "Playername : " + getName() + " " + account.getGold() + "gold";
 	}
-
+	
+	public void move (int afstand){
+		final int ANTALSLOTS = 21;
+		position =+ afstand; //læg den flyttede afstand til den gamle position
+		
+		if(position >= ANTALSLOTS){ //Bestem om den nye position er overskrider spillepladen. Hvis den gør trækker man antallet af pladser fra positionen for at finde den nye position
+			position =- ANTALSLOTS;
+		}
+	}
 }
  

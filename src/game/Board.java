@@ -86,7 +86,6 @@ public class Board {
 	{
 		slot = new Slot[] {new Slot(1,250), new Slot(2,-100), new Slot(3,100), new Slot(4,-20), new Slot(5,180), new Slot(6,0), new Slot(7,-70), new Slot(8,60), new Slot(9, -80), new Slot(10,-50), new Slot(11,650)};
 		fields = new Tax[11];
-		
 		for (int i = 0; i < fields.length; i++) {
 			Color col;
 			if (i%2 == 0)

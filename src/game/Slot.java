@@ -6,18 +6,20 @@ public class Slot {
 	private int price;
 	private int id;
 	private int rent;
+	private Types type;
 	//private String type;
 	
-	public enum Field {
+	public enum Types {
 		TERRITORY, REFUGE, LABORCAMP, TAX, FLEET
 	}
 		
 	
 	
-	public Slot(int i, int pr, int ren){
+	public Slot(int i, int pr, int ren, Types type){
 		price = pr;
 		id = i;
 		rent = ren;
+		this.type = type;
 	}
 
 	public int getPrice() {

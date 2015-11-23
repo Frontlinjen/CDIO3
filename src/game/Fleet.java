@@ -1,5 +1,7 @@
 package game;
 
+import desktop_resources.GUI;
+
 public class Fleet extends Ownable{
 
 	private final int RENT_1 = 500;
@@ -36,8 +38,9 @@ public class Fleet extends Ownable{
 
 	@Override
 	public void landOnField(Player player) {
-		if (getOwner()== null){
-			
+		if(checkOwner(player)){
+			GUI.showMessage(Translator.getString("PAYTHEOWNER", getRent()));
+			player.getAccount().transferTo(getOwner().getAccount(), getRent());
 		}
 		
 	}

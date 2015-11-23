@@ -19,9 +19,9 @@ public class LaborCamp extends Ownable{
 	}
 
 	@Override
+	@Deprecated 
 	public void landOnField(Player player) {
 		if(checkOwner(player)){
-			
 			GUI.showMessage(Translator.getString("PAYTHEOWNER", baseRent));
 			player.getAccount().transferTo(getOwner().getAccount(), baseRent);
 		}

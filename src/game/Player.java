@@ -9,6 +9,7 @@ public class Player {
 	 * Each player has their own set of dice which keeps track of their rolls. 
 	 */
 	private Account account;
+	private Property propertyOwned = new Property();
 	
 	
 	public Player(String s)
@@ -23,6 +24,10 @@ public class Player {
 	public Account getAccount()
 	{
 		return account;
+	}
+	public Property getProperty()
+	{
+		return propertyOwned;
 	}
 
 

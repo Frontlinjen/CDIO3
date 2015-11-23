@@ -38,10 +38,24 @@ public class Account {
 		GUI.setBalance(ownerName, getGold());
 	}
 	
+	public void transferTo(Account other, int amount){
+		if((getGold()-amount)<=0){
+			other.addGold(getGold());
+			setGold(0);
+		}else{
+			removeGold(amount);
+			other.addGold(amount);
+		}
+	}
+	
 	public void addGold(int gold){
 		setGold(gold+getGold());
 	}
-
+	
+	public void removeGold(int gold){
+		setGold(gold-getGold());
+	}
+	
 	@Override
 	public String toString() {
 		return "Currently contains: " + gold + " gold";

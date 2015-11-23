@@ -3,8 +3,9 @@ package game;
 
 public abstract class Field {
 
-	private int id;
+	private int translateID;
 	private Types type;
+	private int position;
 	//private String type;
 	
 	public enum Types {
@@ -13,9 +14,10 @@ public abstract class Field {
 		
 	
 	
-	public Field(int i, Types type){
-		id = i;
+	public Field(int i, Types type, int pos){
+		translateID = i;
 		this.type = type;
+		position = pos;
 	}
 
 	public String getName() {

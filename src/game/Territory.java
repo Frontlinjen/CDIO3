@@ -20,18 +20,7 @@ public class Territory extends Ownable{
 
 	@Override
 	public void landOnField(Player player) {
-		if(getOwner()==null){
-			if(GUI.getUserLeftButtonPressed(Translator.getString("BUYFIELD", price), Translator.getString("YES"), Translator.getString("NO"))){
-				if(player.getAccount().withdraw(price)){
-					setOwner(player);
-				}else{
-					GUI.showMessage(Translator.getString("NOTENOUGHGOLD"));
-				}
-			}
-			else{
-				GUI.showMessage(Translator.getString("ENDTURN"));
-			}
-		}else{
+		if(checkOwner(player)){
 			GUI.showMessage(Translator.getString("PAYTHEOWNER", rent));
 			player.getAccount().transferTo(getOwner().getAccount(), rent);
 		}

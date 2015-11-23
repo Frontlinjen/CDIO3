@@ -23,4 +23,20 @@ public abstract class Ownable extends Field{
 		this.owner = owner;
 	}
 	
+	public boolean checkOwner(Player visitor){
+		if(getOwner()!=null && getOwner()!=visitor)
+			return true;
+			
+				if(GUI.getUserLeftButtonPressed(Translator.getString("BUYFIELD", price), Translator.getString("YES"), Translator.getString("NO"))){
+					if(visitor.getAccount().withdraw(price)){
+						setOwner(visitor);
+					}else{
+						GUI.showMessage(Translator.getString("NOTENOUGHGOLD"));
+					}
+				}
+				else{
+					GUI.showMessage(Translator.getString("ENDTURN"));
+				}
+			return false;
+	}
 }

@@ -1,5 +1,7 @@
 package game;
 
+import desktop_resources.GUI;
+
 public class LaborCamp extends Ownable{
 
 	private int baseRent;
@@ -18,7 +20,10 @@ public class LaborCamp extends Ownable{
 
 	@Override
 	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
-		
+		if(checkOwner(player)){
+			
+			GUI.showMessage(Translator.getString("PAYTHEOWNER", baseRent));
+			player.getAccount().transferTo(getOwner().getAccount(), baseRent);
+		}
 	}
 }

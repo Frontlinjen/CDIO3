@@ -23,8 +23,7 @@ public class Territory extends Ownable{
 		if(getOwner()==null){
 			GUI.getUserLeftButtonPressed(Translator.getString("BUYFIELD", price), Translator.getString("YES"), Translator.getString("NO"));
 			if(true){
-				//If player have enough money
-				if(true){
+				if(player.getAccount().withdraw(price)){
 					setOwner(player);
 				}else{
 					GUI.showMessage(Translator.getString("NOTENOUGHGOLD"));
@@ -32,6 +31,9 @@ public class Territory extends Ownable{
 			}else{
 				GUI.showMessage(Translator.getString("ENDTURN"));
 			}
+		}else{
+			getOwner().getAccount().addGold(rent);
+			player.getAccount().removeGold(rent);
 		}
 
 

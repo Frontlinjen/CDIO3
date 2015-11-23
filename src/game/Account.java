@@ -41,7 +41,11 @@ public class Account {
 	public void addGold(int gold){
 		setGold(gold+getGold());
 	}
-
+	
+	public void removeGold(int gold){
+		setGold(gold-getGold());
+	}
+	
 	@Override
 	public String toString() {
 		return "Currently contains: " + gold + " gold";

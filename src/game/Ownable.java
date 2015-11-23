@@ -1,5 +1,7 @@
 package game;
 
+import desktop_resources.GUI;
+
 public abstract class Ownable extends Field{
 
 	public Ownable(int i, Types type, int price) {

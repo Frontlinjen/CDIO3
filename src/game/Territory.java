@@ -33,8 +33,7 @@ public class Territory extends Ownable{
 			}
 		}else{
 			GUI.showMessage(Translator.getString("PAYTHEOWNER", rent));
-			getOwner().getAccount().addGold(rent);
-			player.getAccount().removeGold(rent);
+			player.getAccount().transferTo(getOwner().getAccount(), rent);
 		}
 	}
 }

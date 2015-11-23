@@ -21,16 +21,16 @@ public abstract class Field {
 	}
 
 	public String getName() {
-		return Translator.getString("SLOT" + id);
+		return Translator.getString("SLOT" + translateID);
 	}
 
 	public String getDescription() {
-		return Translator.getString("SLOTDSC" + id);
+		return Translator.getString("SLOTDSC" + translateID);
 	}
 
 	@Override
 	public String toString() {
-		return "Slot [id=" + id + ", title" + getName() + "]";
+		return "Slot [id=" + translateID + ", title" + getName() + "]";
 	}
 	
 	public abstract void landOnField (Player player);

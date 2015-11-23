@@ -1,8 +1,15 @@
 package game;
 
+import desktop_resources.GUI;
+
 public class Account {	
 	private int gold = 0;
-
+	private String ownerName;
+	Account(int balance, String name)
+	{
+		ownerName = name;
+		gold = balance;
+	}
 	public int getGold() {
 		return gold;
 	}
@@ -28,6 +35,7 @@ public class Account {
 		{
 			setGold(0);
 		}
+		GUI.setBalance(ownerName, getGold());
 	}
 	
 	public void addGold(int gold){

@@ -6,7 +6,22 @@ public class Account {
 	public int getGold() {
 		return gold;
 	}
-
+	/** 
+	 * Attempts to withdraw gold from the player's account.
+	 * @param gold
+	 * The amount of gold that needs to be withdrawn 
+	 * @return
+	 * true if the withdrawal was sucessful, false if not. 
+	 */
+	public boolean withdraw(int gold)
+	{
+		if(this.gold<gold)
+		{
+			return false;
+		}
+		addGold(gold);
+		return true;
+	}
 	public void setGold(int gold) {
 		this.gold = gold;
 		if(getGold()<0)

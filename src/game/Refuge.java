@@ -2,7 +2,9 @@ package game;
 
 public class Refuge extends Field{
 
+
 	private int bonus;
+	
 	
 	public Refuge(int i, Types type, int pos, int price) {
 		super(i, type, pos);
@@ -12,7 +14,7 @@ public class Refuge extends Field{
 
 	@Override
 	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
+		player.getAccount().addGold(bonus);
 		
 	}
 }

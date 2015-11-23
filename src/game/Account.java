@@ -1,18 +1,41 @@
 package game;
 
+import desktop_resources.GUI;
+
 public class Account {	
 	private int gold = 0;
-
+	private String ownerName;
+	Account(int balance, String name)
+	{
+		ownerName = name;
+		gold = balance;
+	}
 	public int getGold() {
 		return gold;
 	}
-
+	/** 
+	 * Attempts to withdraw gold from the player's account.
+	 * @param gold
+	 * The amount of gold that needs to be withdrawn 
+	 * @return
+	 * true if the withdrawal was sucessful, false if not. 
+	 */
+	public boolean withdraw(int gold)
+	{
+		if(this.gold<gold)
+		{
+			return false;
+		}
+		addGold(gold);
+		return true;
+	}
 	public void setGold(int gold) {
 		this.gold = gold;
 		if(getGold()<0)
 		{
 			setGold(0);
 		}
+		GUI.setBalance(ownerName, getGold());
 	}
 	
 	public void addGold(int gold){

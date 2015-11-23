@@ -4,8 +4,8 @@ public class LaborCamp extends Ownable{
 
 	private int baseRent;
 	
-	public LaborCamp(int i, Types type, int price,int baseRent) {
-		super(i, type, price);
+	public LaborCamp(int i, Types type, int pos, int price, int baseRent) {
+		super(i, type, pos, price);
 		this.baseRent = baseRent;
 		// TODO Auto-generated constructor stub
 	}

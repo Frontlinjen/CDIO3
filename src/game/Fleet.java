@@ -7,8 +7,8 @@ public class Fleet extends Ownable{
 	private final int RENT_3 = 2000;
 	private final int RENT_4 = 4000;
 	
-	public Fleet(int i, Types type) {
-		super(i, type);
+	public Fleet(int i, Types type, int pos, int price) {
+		super(i, type, pos, price);
 		// TODO Auto-generated constructor stub
 	}
 

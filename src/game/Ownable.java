@@ -4,8 +4,8 @@ import desktop_resources.GUI;
 
 public abstract class Ownable extends Field{
 
-	public Ownable(int i, Types type, int price) {
-		super(i, type);
+	public Ownable(int i, Types type, int pos, int price) {
+		super(i, type, pos);
 		this.price = price;
 		// TODO Auto-generated constructor stub
 	}

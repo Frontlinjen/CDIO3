@@ -1,6 +1,6 @@
 package slots;
 
-import game.Field.Types;
+import slots.Field.Types;
 import game.Translator;
 
 public abstract class Field {

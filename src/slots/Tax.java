@@ -1,6 +1,8 @@
 package slots;
 
+import desktop_resources.GUI;
 import game.Player;
+import game.Translator;
 
 public class Tax extends Field{
 
@@ -10,12 +12,14 @@ public class Tax extends Field{
 	public Tax(int i, Types type, int pos, int price) {
 		super(i, type, pos);
 		this.taxAmount = taxAmount;
-		// TODO Auto-generated constructor stub
 	}
 
-	@Override
 	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
-		
+		if (GUI.getUserLeftButtonPressed(Translator.getString(getDescription()), Translator.getString("YES"), Translator.getString("NO"))) {
+			player.getAccount().withdraw((player.getAccount().getGold()/10));
+		}
+		else {
+			player.getAccount().withdraw(taxAmount);
+		}
 	}
 }

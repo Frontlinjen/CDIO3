@@ -25,6 +25,7 @@ public class Refuge extends Field{
 		refuge.setDescription(this.getDescription());
 		refuge.setTitle(this.getName());
 		refuge.setSubText(this.bonus+"");
+		return refuge;
 	}
 	
 }

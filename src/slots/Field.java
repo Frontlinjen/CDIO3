@@ -1,4 +1,4 @@
-package game;
+package slots;
 
 import game.Field.Types;
 import game.Translator;

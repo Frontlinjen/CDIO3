@@ -1,5 +1,7 @@
 package slots;
 
+import game.*;
+import desktop_fields.Field;
 import desktop_resources.GUI;
 import game.Ownable;
 import game.Player;
@@ -47,5 +49,17 @@ public class Fleet extends Ownable{
 			player.getAccount().transferTo(getOwner().getAccount(), getRent());
 		}
 		
+	}
+
+	@Override
+	public void landOnField(Player player) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public Field pushToGUI(int position) {
+		// TODO Auto-generated method stub
+		return null;
 	}
 }

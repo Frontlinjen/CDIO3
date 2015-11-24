@@ -1,4 +1,6 @@
-package game;
+package slots;
+
+import game.Player;
 
 public class Tax extends Field{
 

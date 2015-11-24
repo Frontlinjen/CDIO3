@@ -1,5 +1,6 @@
 package game;
 
+import game.Field.Types;
 
 public abstract class Field {
 

@@ -2,8 +2,8 @@ import java.awt.Color;
 
 import desktop_fields.Tax;
 import desktop_resources.GUI;
-import game.Field;
 import game.Slot;
+import slots.Field;
 
 public class GameBoard {
 	public final static int FIELDCOUNT = 21;

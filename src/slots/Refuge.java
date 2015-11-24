@@ -1,4 +1,7 @@
-package game;
+package slots;
+
+import game.Player;
+import slots.Field.Types;
 
 public class Refuge extends Field{
 

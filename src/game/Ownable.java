@@ -1,6 +1,7 @@
 package game;
 
 import desktop_resources.GUI;
+import slots.Field;
 
 public abstract class Ownable extends Field{
 

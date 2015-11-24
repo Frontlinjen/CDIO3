@@ -1,6 +1,10 @@
-package game;
+package slots;
 
 import desktop_resources.GUI;
+import game.Ownable;
+import game.Player;
+import game.Translator;
+import slots.Field.Types;
 
 public class LaborCamp extends Ownable{
 

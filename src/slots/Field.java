@@ -1,5 +1,7 @@
-package game;
+package slots;
 
+import game.Player;
+import game.Translator;
 
 public abstract class Field {
 

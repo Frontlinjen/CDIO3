@@ -1,5 +1,6 @@
 package slots;
 
+import game.*;
 import desktop_resources.GUI;
 import slots.Field;
 

@@ -32,7 +32,7 @@ public class Territory extends Ownable{
 
 	@Override
 	public desktop_fields.Field pushToGUI(int position) {
-		desktop_fields.Field territory = new desktop_fields.Street.Builder().build();
+		desktop_fields.Street territory = new desktop_fields.Street.Builder().build();
 		territory.setDescription(this.getDescription());
 		territory.setTitle(this.getName());
 		territory.setSubText(this.price+"");

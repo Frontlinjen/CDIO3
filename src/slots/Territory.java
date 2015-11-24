@@ -2,7 +2,7 @@ package slots;
 
 import desktop_fields.Field;
 import desktop_resources.GUI;
-import game.Ownable;
+import slots.Ownable;
 import game.Player;
 import game.Translator;
 import slots.Field.Types;
@@ -19,8 +19,7 @@ public class Territory extends Ownable{
 
 	@Override
 	public int getRent() {
-		// TODO Auto-generated method stub
-		return 0;
+		return rent;
 	}
 
 	@Override

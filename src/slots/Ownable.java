@@ -1,4 +1,4 @@
-package game;
+package slots;
 
 import desktop_resources.GUI;
 import slots.Field;

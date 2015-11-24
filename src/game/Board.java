@@ -23,7 +23,7 @@ public class Board {
 	{
 		Player newPlayer = new Player(name);
 		players.add(newPlayer);
-		GUI.addPlayer(name, 1000);
+		GUI.addPlayer(name, 30000);
 		desktop_board.Board.getInstance().updatePlayers();
 	}
 	boolean verifyName(String s)
@@ -91,31 +91,7 @@ public class Board {
 			currentPlayer = players.get(pos+1);
 		}
 	}
-	private void initializeBoard()
-	{
-		slot = new Slot[] {new Slot(1,250), new Slot(2,-100), new Slot(3,100), new Slot(4,-20), new Slot(5,180), new Slot(6,0), new Slot(7,-70), new Slot(8,60), new Slot(9, -80), new Slot(10,-50), new Slot(11,650)};
-		fields = new Tax[11];
-		
-		for (int i = 0; i < fields.length; i++) {
-			Color col;
-			if (i%2 == 0)
-			{
-				col = new Color(212, 109, 6);
-			}
-			else
-			{
-				col = new Color(79, 161, 131);
-			}
-			Tax t = new Tax.Builder().setBgColor(col).build();
-			fields[i] = t;
-		}
-		for (int i = 0; i < 11; i++){
-			fields[i].setDescription(slot[i].getDescription());
-			fields[i].setTitle(slot[i].getName());
-			fields[i].setSubText(slot[i].getValue()+"");
-		}
-		GUI.create(fields);
-	}
+
 	private void AdvanceGame(BaseDice dice)
 	{
 		int tempResult = dice.result()-2;

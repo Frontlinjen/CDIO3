@@ -1,6 +1,7 @@
 package game;
 
 import game.Field.Types;
+import game.Translator;
 
 public abstract class Field {
 
@@ -29,10 +30,6 @@ public abstract class Field {
 		return Translator.getString("SLOTDSC" + translateID);
 	}
 
-	@Override
-	public String toString() {
-		return "Slot [id=" + translateID + ", title" + getName() + "]";
-	}
 	
 	public abstract void landOnField (Player player);
 	/**

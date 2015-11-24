@@ -53,7 +53,7 @@ public class Fleet extends Ownable{
 	}
 
 	@Override
-	public Field pushToGUI(int position) {
+	public desktop_fields.Field pushToGUI(int position) {
 		desktop_fields.Shipping fleet = new desktop_fields.Shipping.Builder().build();
 		fleet.setTitle(getName());
 		fleet.setDescription(getDescription());

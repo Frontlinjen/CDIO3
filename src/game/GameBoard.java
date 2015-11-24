@@ -25,12 +25,12 @@ public class GameBoard {
 			Field f;
 			try {
 				f = shuffle.getNext();
+				desktop_fields.Field guiField = f.pushToGUI(pos++);
+				guiFields[pos-1] = guiField;
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			desktop_fields.Field guiField = f.pushToGUI(pos++);
-			guiFields[pos-1] = guiField;
 		}
 		
 		GUI.create(guiFields);

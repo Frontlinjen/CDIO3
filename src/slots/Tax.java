@@ -26,7 +26,7 @@ public class Tax extends Field{
 
 	@Override
 	public desktop_fields.Field pushToGUI(int position) {
-		desktop_fields.Field tax = new desktop_fields.Tax.Builder().build();
+		desktop_fields.Tax tax = new desktop_fields.Tax.Builder().build();
 		tax.setDescription(this.getDescription());
 		tax.setTitle(this.getName());
 		tax.setSubText(taxAmount + "");

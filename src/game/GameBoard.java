@@ -1,12 +1,8 @@
 package game;
 
 import slots.*;
-import java.awt.Color;
-import java.util.Random;
-
-import desktop_fields.Tax;
 import desktop_resources.GUI;
-import game.Field.Types;
+
 public class GameBoard {
 
 	Field[] fields;
@@ -26,9 +22,15 @@ public class GameBoard {
 		int pos = 1;
 		while(shuffle.elementsLeft()>0)
 		{
-			Field f = shuffle.getNext();
-			desktop_fields.Field guiField = f.pushToGUI(pos++);
-			guiFields[pos-1] = guiField;
+			Field f;
+			try {
+				f = shuffle.getNext();
+				desktop_fields.Field guiField = f.pushToGUI(pos++);
+				guiFields[pos-1] = guiField;
+			} catch (Exception e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
 		}
 		
 		GUI.create(guiFields);

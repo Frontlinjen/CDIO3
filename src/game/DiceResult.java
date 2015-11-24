@@ -4,23 +4,33 @@ package game;
  */
 public class DiceResult
 {
-	int[] eyes = new int[2];
+	private int[] dice;
 	
-	public DiceResult(int first, int second){
-		eyes[0] = first;
-		eyes[1] = second;
+	public DiceResult(int[] result){
+		dice = result;
 	}
-	public int getFirstDice()
-	{
-		return eyes[0];
-	}
-	public int getSecondDice()
-	{
-		return eyes[1];
+	public int getDice(int n){
+		
+		try
+		{
+			return dice[n];
+		}
+		catch(IndexOutOfBoundsException e)
+		{
+			throw new IndexOutOfBoundsException("Could not reach the correct element(dice array):\n" + e.getMessage());
+		}
+	
+		
 	}
 	public int getSum(){
 		
-		return eyes[1] + eyes[0];
+		int sumOfDice = 0;
+		
+		for(int i=0; i < dice.length; i++){
+			sumOfDice += dice[i];
+		}
+		
+		return sumOfDice;
 	}
 }
 

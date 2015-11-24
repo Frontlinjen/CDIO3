@@ -13,7 +13,8 @@ public class ShuffleBag<T> {
 	}
 	public int elementsLeft()
 	{
-		return currentPos;
+		//+1 since currentPos goes from 0, and hence if the first element(0) is left it would return 0. 
+		return currentPos+1;
 	}
 	public void Reset()
 	{

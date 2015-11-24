@@ -99,10 +99,9 @@ public class Board {
 		GUI.setCar(tempResult+1, currentPlayer.getName());
 		currentPlayer.addPoints(slot[tempResult].getValue());
 		fields[tempResult].displayOnCenter();
-		
 	}
+	
 	public void startGame(){
-		initializeBoard();
 		int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
 		setupPlayers(amount);
 		boolean running = true;

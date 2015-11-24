@@ -5,7 +5,7 @@ import java.util.Random;
 public class DiceCup {
 
 	int[] diceArray;
-	Random Rgen = new Random(System.currentTimeMillis());
+	Random rGen = new Random(System.currentTimeMillis());
 	
 	public DiceCup(int numberOfDice){
 		
@@ -13,6 +13,10 @@ public class DiceCup {
 				
 	}
 		public DiceResult rollDice(){
-				
+		
+			for(int i=0; i < diceArray.length; i++){
+				diceArray[i] = rGen.nextInt(6)+1;
+			}
+			return new DiceResult(diceArray);
 		}
 }

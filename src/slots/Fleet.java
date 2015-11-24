@@ -2,14 +2,15 @@ package slots;
 
 import game.*;
 import desktop_fields.Field;
+import desktop_fields.Shipping;
 import desktop_resources.GUI;
-import game.Ownable;
+import slots.Ownable;
 import game.Player;
 import game.Translator;
 import slots.Field.Types;
 
 public class Fleet extends Ownable{
-
+	desktop_fields.Shipping fleet;
 	private final int RENT_1 = 500;
 	private final int RENT_2 = 1000;
 	private final int RENT_3 = 2000;
@@ -52,14 +53,11 @@ public class Fleet extends Ownable{
 	}
 
 	@Override
-	public void landOnField(Player player) {
-		// TODO Auto-generated method stub
-		
-	}
-
-	@Override
 	public Field pushToGUI(int position) {
-		// TODO Auto-generated method stub
-		return null;
+		desktop_fields.Shipping fleet = new desktop_fields.Shipping.Builder().build();
+		fleet.setTitle(getName());
+		fleet.setDescription(getDescription());
+		fleet.setSubText("" + price);
+		return fleet;
 	}
 }

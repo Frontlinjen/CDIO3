@@ -4,7 +4,7 @@ import game.*;
 import desktop_fields.Field;
 import desktop_fields.Shipping;
 import desktop_resources.GUI;
-import game.Ownable;
+import slots.Ownable;
 import game.Player;
 import game.Translator;
 import slots.Field.Types;

@@ -1,7 +1,7 @@
 package slots;
 
 import desktop_resources.GUI;
-import game.Ownable;
+import slots.Ownable;
 import game.Player;
 import game.Translator;
 import slots.Field.Types;
@@ -29,5 +29,13 @@ public class LaborCamp extends Ownable{
 			GUI.showMessage(Translator.getString("PAYTHEOWNER", baseRent));
 			player.getAccount().transferTo(getOwner().getAccount(), baseRent);
 		}
+	}
+	public desktop_fields.Field pushToGUI(int position){
+		desktop_fields.Field LaborCamp = new desktop_fields.Brewery.Builder().build();
+		LaborCamp.setDescription(this.getDescription());
+		LaborCamp.setTitle(this.getName());
+		LaborCamp.setSubText(price+"");
+		LaborCamp.setSubText(baseRent+"");
+		return LaborCamp;
 	}
 }

@@ -104,7 +104,7 @@ public class Board {
 	public void startGame(){
 		System.out.println("Starting game..");
 		slots.initializeBoard();
-		int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
+		int amount = GUI.getUserInteger(Translator.getString("NUMBEROFPLAYERS"));
 		setupPlayers(amount);
 		//GUI.addPlayer("Test", 0);
 		setupPlayer("Test");

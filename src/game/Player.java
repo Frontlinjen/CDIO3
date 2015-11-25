@@ -11,6 +11,12 @@ public class Player {
 	private Account account;
 	private Property propertyOwned = new Property();
 	
+	DiceCup dice = new DiceCup(2);
+	
+	public DiceCup getDice()
+	{
+		return dice;
+	}
 	
 	public Player(String s)
 	{
@@ -47,6 +53,10 @@ public class Player {
 		if(position >= ANTALSLOTS){ //Bestem om den nye position er overskrider spillepladen. Hvis den g�r tr�kker man antallet af pladser fra positionen for at finde den nye position
 			position =- ANTALSLOTS;
 		}
+	}
+	
+	public int getPosition(){
+		return position;
 	}
 }
  

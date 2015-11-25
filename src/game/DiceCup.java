@@ -4,12 +4,12 @@ import java.util.Random;
 
 public class DiceCup {
 
-	int[] diceArray;
-	Random rGen = new Random(System.currentTimeMillis());
+	private int[] diceArray;
+	private Random rGen = new Random(System.currentTimeMillis());
 	
 	public DiceCup(int numberOfDice){
 		
-		int[] diceArray = new int[numberOfDice];
+		diceArray = new int[numberOfDice];
 				
 	}
 		public DiceResult rollDice(){

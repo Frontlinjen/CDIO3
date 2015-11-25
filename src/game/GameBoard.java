@@ -12,7 +12,7 @@ public class GameBoard {
 		
 		System.out.println("Loading board...");
 		Field[] tmpFields = FieldLoader.parseFields("Fields.xml");
-		for(Field f : fields)
+		for(Field f : tmpFields)
 		{
 			System.out.println(f.getName());
 		}

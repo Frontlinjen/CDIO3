@@ -10,7 +10,7 @@ import game.Translator;
 import slots.Field.Types;
 
 public class Fleet extends Ownable{
-	desktop_fields.Shipping fleet;
+	desktop_fields.Street fleet;
 	private final int RENT_1 = 500;
 	private final int RENT_2 = 1000;
 	private final int RENT_3 = 2000;
@@ -48,14 +48,17 @@ public class Fleet extends Ownable{
 		if(checkOwner(player)){
 			GUI.showMessage(Translator.getString("PAYTHEOWNER", getRent()));
 			player.getAccount().transferTo(getOwner().getAccount(), getRent());
+		}else{
+			if(BuyField(player)){
+				player.getProperty().expandFleet();
+			}	
 		}
-		
 	}
 
 	@Override
 	public desktop_fields.Field pushToGUI(int position) {
 		this.position = position;
-		fleet = new desktop_fields.Shipping.Builder().build();
+		fleet = new desktop_fields.Street.Builder().build();
 		fleet.setTitle(getName());
 		fleet.setDescription(getDescription());
 		fleet.setSubText("" + price);

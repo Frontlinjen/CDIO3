@@ -1,5 +1,7 @@
 package slots;
 
+import java.awt.Color;
+
 import desktop_resources.GUI;
 import game.Player;
 import game.Translator;
@@ -28,7 +30,7 @@ public class Tax extends Field{
 	@Override
 	public desktop_fields.Field pushToGUI(int position) {
 		this.position = position;
-		tax = new desktop_fields.Tax.Builder().build();
+		tax = new desktop_fields.Tax.Builder().setBgColor(Color.RED).build();
 		tax.setDescription(this.getDescription());
 		tax.setTitle(this.getName());
 		tax.setSubText(taxAmount + "");

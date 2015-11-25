@@ -36,7 +36,7 @@ public class LaborCamp extends Ownable{
 	public desktop_fields.Field pushToGUI(int position){
 
 		this.position = position;
-		LaborCamp = new desktop_fields.Brewery.Builder().setRent(baseRent+"").build();
+		LaborCamp = new desktop_fields.Brewery.Builder().setRent(baseRent+"*dice").build();
 		LaborCamp.setDescription(this.getDescription());
 		LaborCamp.setTitle(this.getName());
 		

@@ -12,7 +12,7 @@ public class Tax extends Field{
 	
 	public Tax(int i, Types type, int price) {
 		super(i, type);
-		this.taxAmount = taxAmount;
+		this.taxAmount = price;
 	}
 
 	@Override

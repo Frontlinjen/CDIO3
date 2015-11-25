@@ -48,10 +48,10 @@ public class Player {
 	
 	public void move (int afstand){
 		final int ANTALSLOTS = 21;
-		position =+ afstand; //l�g den flyttede afstand til den gamle position
+		position += afstand; //l�g den flyttede afstand til den gamle position
 		
 		if(position > ANTALSLOTS){ //Bestem om den nye position er overskrider spillepladen. Hvis den g�r tr�kker man antallet af pladser fra positionen for at finde den nye position
-			position =- ANTALSLOTS;
+			position -= ANTALSLOTS;
 		}
 	}
 	

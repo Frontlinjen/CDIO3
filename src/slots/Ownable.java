@@ -44,6 +44,7 @@ public abstract class Ownable extends Field{
 		if(GUI.getUserLeftButtonPressed(Translator.getString("BUYFIELD", price), Translator.getString("YES"), Translator.getString("NO"))){
 			if(visitor.getAccount().withdraw(price)){
 				setOwner(visitor);
+				visitor.getProperty().addProperty(this);
 				return true;
 			}else{
 				GUI.showMessage(Translator.getString("NOTENOUGHGOLD"));

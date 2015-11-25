@@ -1,5 +1,7 @@
 package slots;
 
+import java.awt.Color;
+
 import javax.management.DescriptorKey;
 
 import desktop_resources.GUI;
@@ -25,18 +27,21 @@ public class LaborCamp extends Ownable{
 		return 0;
 	}
 
-	@Override
-	@Deprecated 
+	@Override 
 	public void landOnField(Player player) {
 		if(checkOwner(player)){
 			GUI.showMessage(Translator.getString("PAYTHEOWNER", baseRent));
 			player.getAccount().transferTo(getOwner().getAccount(), baseRent);
+		}else{
+			if(BuyField(player)){
+				player.getProperty().expandLaborCamp();
+			}	
 		}
 	}
 	public desktop_fields.Field pushToGUI(int position){
 
 		this.position = position;
-		LaborCamp = new desktop_fields.Street.Builder().setRent(baseRent+"*dice").build();
+		LaborCamp = new desktop_fields.Street.Builder().setRent(baseRent+"*dice").setBgColor(Color.GRAY).build();
 		LaborCamp.setDescription(this.getDescription());
 		LaborCamp.setTitle(this.getName());
 		

@@ -16,8 +16,8 @@ public class Fleet extends Ownable{
 	private final int RENT_3 = 2000;
 	private final int RENT_4 = 4000;
 	
-	public Fleet(int i, Types type, int pos, int price) {
-		super(i, type, pos, price);
+	public Fleet(int i, Types type, int price) {
+		super(i, type, price);
 		// TODO Auto-generated constructor stub
 	}
 
@@ -54,7 +54,8 @@ public class Fleet extends Ownable{
 
 	@Override
 	public desktop_fields.Field pushToGUI(int position) {
-		desktop_fields.Shipping fleet = new desktop_fields.Shipping.Builder().build();
+		this.position = position;
+		fleet = new desktop_fields.Shipping.Builder().build();
 		fleet.setTitle(getName());
 		fleet.setDescription(getDescription());
 		fleet.setSubText("" + price);

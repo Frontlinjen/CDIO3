@@ -1,23 +1,21 @@
 package slots;
 
-import desktop_fields.Field;
 import desktop_resources.GUI;
 import slots.Ownable;
 import game.Player;
 import game.Translator;
-import slots.Field.Types;
 
 public class Territory extends Ownable{
 
 	private int rent;
+	desktop_fields.Street territory;
 
-	public Territory(int i, Types type, int pos, int price, int rent) {
-		super(i, type, pos, price);
+	public Territory(int i, Types type, int price, int rent) {
+		super(i, type,price);
 		this.rent = rent;
-		// TODO Auto-generated constructor stub
 	}
 
-	@Override
+
 	public int getRent() {
 		return rent;
 	}
@@ -32,10 +30,11 @@ public class Territory extends Ownable{
 
 	@Override
 	public desktop_fields.Field pushToGUI(int position) {
-		desktop_fields.Street territory = new desktop_fields.Street.Builder().build();
+		this.position = position;
+		territory = new desktop_fields.Street.Builder().setRent(rent+"").build();
 		territory.setDescription(this.getDescription());
 		territory.setTitle(this.getName());
 		territory.setSubText(this.price+"");
-		return null;
+		return territory;
 	}
 }

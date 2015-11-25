@@ -7,10 +7,11 @@ public class Refuge extends Field{
 
 
 	private int bonus;
+	desktop_fields.Refuge refuge; 
 	
 	
-	public Refuge(int i, Types type, int pos, int bonus) {
-		super(i, type, pos);
+	public Refuge(int i, Types type, int bonus) {
+		super(i, type);
 		this.bonus = bonus;
 		// TODO Auto-generated constructor stub
 	}
@@ -21,7 +22,8 @@ public class Refuge extends Field{
 	}
 	@Override
 	public desktop_fields.Field pushToGUI(int position){
-		desktop_fields.Field refuge = new desktop_fields.Refuge.Builder().build();
+		this.position = position;
+		refuge = new desktop_fields.Refuge.Builder().build();
 		refuge.setDescription(this.getDescription());
 		refuge.setTitle(this.getName());
 		refuge.setSubText(this.bonus+"");

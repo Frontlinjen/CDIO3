@@ -1,5 +1,7 @@
 package slots;
 
+import javax.management.DescriptorKey;
+
 import desktop_resources.GUI;
 import slots.Ownable;
 import game.Player;
@@ -9,9 +11,10 @@ import slots.Field.Types;
 public class LaborCamp extends Ownable{
 
 	private int baseRent;
+	desktop_fields.Brewery LaborCamp;
 	
-	public LaborCamp(int i, Types type, int pos, int price, int baseRent) {
-		super(i, type, pos, price);
+	public LaborCamp(int i, Types type, int price, int baseRent) {
+		super(i, type, price);
 		this.baseRent = baseRent;
 		// TODO Auto-generated constructor stub
 	}
@@ -31,11 +34,15 @@ public class LaborCamp extends Ownable{
 		}
 	}
 	public desktop_fields.Field pushToGUI(int position){
-		desktop_fields.Field LaborCamp = new desktop_fields.Brewery.Builder().build();
+
+		this.position = position;
+		LaborCamp = new desktop_fields.Brewery.Builder().setRent(baseRent+"*dice").build();
 		LaborCamp.setDescription(this.getDescription());
 		LaborCamp.setTitle(this.getName());
+		
 		LaborCamp.setSubText(price+"");
-		LaborCamp.setSubText(baseRent+"");
+		
+		//LaborCamp.setSubText(baseRent+"");
 		return LaborCamp;
 	}
 }

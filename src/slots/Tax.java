@@ -9,8 +9,8 @@ public class Tax extends Field{
 	private int taxAmount;
 	private int taxRate = -1;
 	
-	public Tax(int i, Types type, int pos, int price) {
-		super(i, type, pos);
+	public Tax(int i, Types type, int price) {
+		super(i, type);
 		this.taxAmount = taxAmount;
 	}
 
@@ -26,6 +26,7 @@ public class Tax extends Field{
 
 	@Override
 	public desktop_fields.Field pushToGUI(int position) {
+		this.position = position;
 		desktop_fields.Tax tax = new desktop_fields.Tax.Builder().build();
 		tax.setDescription(this.getDescription());
 		tax.setTitle(this.getName());

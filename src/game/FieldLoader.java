@@ -66,7 +66,7 @@ public class FieldLoader {
 			int translateID = parseInteger(translateNode);
 			int rent = parseInteger(rentNode);
 			int price = parseInteger(priceNode);
-			return new Territory(translateID, Types.TERRITORY,0,price, rent);
+			return new Territory(translateID, Types.TERRITORY,price, rent);
 		}
 		catch(Exception exc)
 		{
@@ -83,7 +83,7 @@ public class FieldLoader {
 			Node bonusNode = getUnique(e, "bonus");
 			int translateID = parseInteger(translateNode);
 			int bonus = parseInteger(bonusNode);
-			return new Refuge(translateID, Types.REFUGE, 0, bonus);
+			return new Refuge(translateID, Types.REFUGE, bonus);
 			
 		} catch (Exception exc) {
 			
@@ -102,7 +102,7 @@ public class FieldLoader {
 			int translateID = parseInteger(translateNode);
 			int rent = parseInteger(rentNode);
 			int price = parseInteger(priceNode);
-			return new LaborCamp(translateID, Types.REFUGE, 0, price, rent);
+			return new LaborCamp(translateID, Types.REFUGE, price, rent);
 			
 		} catch (Exception exc) {
 			
@@ -118,7 +118,7 @@ public class FieldLoader {
 			Node taxNode = getUnique(e, "tax");
 			int translateID = parseInteger(translateNode);
 			int tax = parseInteger(taxNode);
-			return new Tax(translateID, Types.REFUGE, 0, tax);
+			return new Tax(translateID, Types.REFUGE, tax);
 			
 		} catch (Exception exc) {
 			
@@ -136,7 +136,7 @@ public class FieldLoader {
 			int translateID = parseInteger(translateNode);
 			int price = parseInteger(priceNode);
 			
-			return new Fleet(translateID, Types.REFUGE, 0, price);
+			return new Fleet(translateID, Types.REFUGE, price);
 			
 		} catch (Exception exc) {
 			

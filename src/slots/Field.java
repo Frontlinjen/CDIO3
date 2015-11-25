@@ -6,7 +6,7 @@ public abstract class Field {
 
 	private int translateID;
 	private Types type;
-	private int position;
+	protected int position;
 	//private String type;
 	
 	public enum Types {
@@ -15,10 +15,9 @@ public abstract class Field {
 		
 	
 	
-	public Field(int i, Types type, int pos){
+	public Field(int i, Types type){
 		translateID = i;
 		this.type = type;
-		position = pos;
 	}
 
 	public String getName() {

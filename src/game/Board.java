@@ -9,7 +9,7 @@ import desktop_fields.Tax;
 import desktop_resources.GUI;
 
 public class Board {
-	private Slot[] slot;
+	private GameBoard slots = new GameBoard();
 	private Tax[] fields;
 	private List<Player> players = new ArrayList<Player>();
 	
@@ -97,13 +97,16 @@ public class Board {
 		int tempResult = dice.result()-2;
 		GUI.removeAllCars(currentPlayer.getName());
 		GUI.setCar(tempResult+1, currentPlayer.getName());
-		currentPlayer.addPoints(slot[tempResult].getValue());
+		//currentPlayer.addPoints(slot[tempResult].getValue());
 		fields[tempResult].displayOnCenter();
 	}
 	
 	public void startGame(){
-		int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
-		setupPlayers(amount);
+		System.out.println("Starting game..");
+		//int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
+		slots.initializeBoard();
+		GUI.showMessage("HI!");
+		/*setupPlayers(amount);
 		boolean running = true;
 		while(running)
 		{
@@ -117,11 +120,14 @@ public class Board {
 				tempDice.rollDice();
 				AdvanceGame(tempDice);
 				if(currentPlayer.getPoints() >= 3000){
+				
 					break;
 				}
+				*/
 				/*When tempDice.result is equal to 10, it results in 8 (see tempResult), 
 				 * so the player lands on array[8], which gives another turn.
 				 */
+		/*
 				else if(tempDice.result() == 10){
 					GUI.getUserButtonPressed(currentPlayer.getName() + " " + Translator.getString("EXTRATURN"), Translator.getString("OK"));
 					continue;
@@ -142,7 +148,8 @@ public class Board {
 				running = false;
 			}
 		}
-		GUI.close();
+		*/
+		//GUI.close();
 
 	}
 	public static void main(String[] args) {

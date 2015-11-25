@@ -10,7 +10,7 @@ public class GameBoard {
 	{	
 		//desktop_fields.Brewery b = new desktop_fields.Brewery.Builder().setRent("2000").build();
 		
-		
+		System.out.println("Loading board...");
 		fields = FieldLoader.parseFields("Fields.xml");
 		for(Field f : fields)
 		{
@@ -25,14 +25,14 @@ public class GameBoard {
 			Field f;
 			try {
 				f = shuffle.getNext();
-				desktop_fields.Field guiField = f.pushToGUI(pos++);
+				desktop_fields.Field guiField = f.pushToGUI(pos);
 				guiFields[pos-1] = guiField;
+				++pos;
 			} catch (Exception e) {
 				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
 		}
-		
 		GUI.create(guiFields);
 	}
 	public int getFieldCount()

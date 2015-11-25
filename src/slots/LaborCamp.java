@@ -30,6 +30,7 @@ public class LaborCamp extends Ownable{
 	@Override 
 	public void landOnField(Player player) {
 		if(checkOwner(player)){
+			baseRent = player.getDice().rollDice().getSum() * 100 * player.getProperty().getLaborCampOwned();
 			GUI.showMessage(Translator.getString("PAYTHEOWNER", baseRent));
 			player.getAccount().transferTo(getOwner().getAccount(), baseRent);
 		}else{

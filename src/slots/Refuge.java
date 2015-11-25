@@ -7,6 +7,7 @@ public class Refuge extends Field{
 
 
 	private int bonus;
+	desktop_fields.Refuge refuge; 
 	
 	
 	public Refuge(int i, Types type, int bonus) {
@@ -22,7 +23,7 @@ public class Refuge extends Field{
 	@Override
 	public desktop_fields.Field pushToGUI(int position){
 		this.position = position;
-		desktop_fields.Refuge refuge = new desktop_fields.Refuge.Builder().build();
+		refuge = new desktop_fields.Refuge.Builder().build();
 		refuge.setDescription(this.getDescription());
 		refuge.setTitle(this.getName());
 		refuge.setSubText(this.bonus+"");

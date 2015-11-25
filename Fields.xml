@@ -97,4 +97,8 @@
 		<translateID>21</translateID>
 		<price>4000</price>
 	</field>
+	<field type="fleet">
+		<translateID>21</translateID>
+		<price>4000</price>
+	</field>
 </fields>

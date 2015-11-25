@@ -11,6 +11,7 @@ import slots.Field.Types;
 public class LaborCamp extends Ownable{
 
 	private int baseRent;
+	desktop_fields.Brewery LaborCamp;
 	
 	public LaborCamp(int i, Types type, int price, int baseRent) {
 		super(i, type, price);
@@ -33,8 +34,9 @@ public class LaborCamp extends Ownable{
 		}
 	}
 	public desktop_fields.Field pushToGUI(int position){
+
 		this.position = position;
-		desktop_fields.Brewery LaborCamp = new desktop_fields.Brewery.Builder().setRent(baseRent+"").build();
+		LaborCamp = new desktop_fields.Brewery.Builder().setRent(baseRent+"").build();
 		LaborCamp.setDescription(this.getDescription());
 		LaborCamp.setTitle(this.getName());
 		

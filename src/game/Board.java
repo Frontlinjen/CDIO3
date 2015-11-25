@@ -7,6 +7,7 @@ import java.util.regex.Pattern;
 
 import desktop_fields.Tax;
 import desktop_resources.GUI;
+import slots.Ownable;
 
 public class Board {
 	private GameBoard slots = new GameBoard();
@@ -105,6 +106,16 @@ public class Board {
 		System.out.println("Starting game..");
 		//int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
 		slots.initializeBoard();
+		//GUI.addPlayer("Test", 0);
+		setupPlayer("Test");
+		for (int i = 0; i < slots.getFieldCount(); i++) {
+			slots.Field f = slots.getField(i);
+			if(Ownable.class.isInstance(f))
+			{
+				((Ownable)f).setOwner(players.get(0));
+			}
+		}
+	
 		GUI.showMessage("HI!");
 		/*setupPlayers(amount);
 		boolean running = true;

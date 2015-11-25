@@ -26,7 +26,7 @@ public class Account {
 		{
 			return false;
 		}
-		addGold(gold);
+		removeGold(gold);
 		return true;
 	}
 	public void setGold(int gold) {

@@ -23,7 +23,7 @@ public abstract class Ownable extends Field{
 	public void removeOwner()
 	{
 		this.owner = null;
-		GUI.setOwner(getPosition(), null);
+		GUI.removeOwner(getPosition());
 		
 	}
 	public void setOwner(Player owner) {

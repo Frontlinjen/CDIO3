@@ -4,7 +4,7 @@ import java.util.Locale;
 import java.util.ResourceBundle;
 
 public class Translator {
-	static ResourceBundle strings;
+	private static ResourceBundle strings;
 	public static String getString(String keyword, Object... args)
 	{
 		

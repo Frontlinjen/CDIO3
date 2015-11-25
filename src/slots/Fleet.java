@@ -1,6 +1,9 @@
 package slots;
 
 import game.*;
+
+import java.awt.Color;
+
 import desktop_fields.Field;
 import desktop_fields.Shipping;
 import desktop_resources.GUI;
@@ -58,7 +61,7 @@ public class Fleet extends Ownable{
 	@Override
 	public desktop_fields.Field pushToGUI(int position) {
 		this.position = position;
-		fleet = new desktop_fields.Street.Builder().build();
+		fleet = new desktop_fields.Street.Builder().setRent(String.format("%d, %d, %d, %d", RENT_1, RENT_2, RENT_3, RENT_4)).setBgColor(Color.BLUE).build();
 		fleet.setTitle(getName());
 		fleet.setDescription(getDescription());
 		fleet.setSubText("" + price);

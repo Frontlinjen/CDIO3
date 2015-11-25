@@ -20,9 +20,16 @@ public abstract class Ownable extends Field{
 	public Player getOwner() {
 		return owner;
 	}
-
+	public void removeOwner()
+	{
+		this.owner = null;
+		GUI.setOwner(getPosition(), null);
+		
+	}
 	public void setOwner(Player owner) {
 		this.owner = owner;
+		//desktop_codebehind.Player player = desktop_board.Board.getInstance().getPlayer(owner.getName());
+		GUI.setOwner(getPosition(), owner.getName());
 	}
 	
 	public boolean checkOwner(Player visitor){

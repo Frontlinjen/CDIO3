@@ -28,7 +28,10 @@ public abstract class Field {
 	public String getDescription() {
 		return Translator.getString("SLOTDSC" + translateID);
 	}
-
+	public int getPosition()
+	{
+		return position;
+	}
 	
 	public abstract void landOnField (Player player);
 	/**

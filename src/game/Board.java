@@ -56,8 +56,7 @@ public class Board {
 	}
 	
 	private void setupPlayers(int i) {
-		int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
-		for(int j = 0; j < amount; j++) {
+		for(int j = 0; j < i; j++) {
 			String user;
 			if(players.isEmpty())
 			{
@@ -104,13 +103,15 @@ public class Board {
 	
 	public void startGame(){
 		System.out.println("Starting game..");
-		//int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
 		slots.initializeBoard();
+		int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
+		setupPlayers(amount);
 		//GUI.addPlayer("Test", 0);
 		setupPlayer("Test");
 		for (int i = 0; i < slots.getFieldCount(); i++) {
 			slots.Field f = slots.getField(i);
-			if(Ownable.class.isInstance(f))
+			
+			if(f instanceof Ownable)
 			{
 				((Ownable)f).setOwner(players.get(0));
 			}

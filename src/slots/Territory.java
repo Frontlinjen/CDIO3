@@ -24,6 +24,7 @@ public class Territory extends Ownable{
 
 	@Override
 	public void landOnField(Player player) {
+		territory.displayOnCenter();
 		if(checkOwner(player)){
 			GUI.showMessage(Translator.getString("PAYTHEOWNER", rent));
 			player.getAccount().transferTo(getOwner().getAccount(), rent);

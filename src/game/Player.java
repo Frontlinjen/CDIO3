@@ -11,6 +11,12 @@ public class Player {
 	private Account account;
 	private Property propertyOwned = new Property();
 	
+	DiceCup dice = new DiceCup(2);
+	
+	public DiceCup getDice()
+	{
+		return dice;
+	}
 	
 	public Player(String s)
 	{

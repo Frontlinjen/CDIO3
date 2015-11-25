@@ -2,7 +2,9 @@ package slots;
 
 import java.awt.Color;
 
+import desktop_resources.GUI;
 import game.Player;
+import game.Translator;
 import slots.Field.Types;
 
 public class Refuge extends Field{
@@ -20,6 +22,7 @@ public class Refuge extends Field{
 
 	@Override
 	public void landOnField(Player player) {
+		GUI.showMessage(Translator.getString("LANDONREFUGE", bonus));
 		player.getAccount().addGold(bonus);		
 	}
 	@Override

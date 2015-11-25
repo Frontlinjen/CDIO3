@@ -54,5 +54,9 @@ public class Player {
 			position =- ANTALSLOTS;
 		}
 	}
+	
+	public int getPosition(){
+		return position;
+	}
 }
  

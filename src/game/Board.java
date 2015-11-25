@@ -7,9 +7,10 @@ import java.util.regex.Pattern;
 
 import desktop_fields.Tax;
 import desktop_resources.GUI;
+import slots.Ownable;
 
 public class Board {
-	private Slot[] slot;
+	private GameBoard slots = new GameBoard();
 	private Tax[] fields;
 	private List<Player> players = new ArrayList<Player>();
 	
@@ -55,8 +56,7 @@ public class Board {
 	}
 	
 	private void setupPlayers(int i) {
-		int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
-		for(int j = 0; j < amount; j++) {
+		for(int j = 0; j < i; j++) {
 			String user;
 			if(players.isEmpty())
 			{
@@ -97,13 +97,28 @@ public class Board {
 		int tempResult = dice.result()-2;
 		GUI.removeAllCars(currentPlayer.getName());
 		GUI.setCar(tempResult+1, currentPlayer.getName());
-		currentPlayer.addPoints(slot[tempResult].getValue());
+		//currentPlayer.addPoints(slot[tempResult].getValue());
 		fields[tempResult].displayOnCenter();
 	}
 	
 	public void startGame(){
-		int amount = GUI.getUserInteger("NUMBEROFPLAYERS");
+		System.out.println("Starting game..");
+		slots.initializeBoard();
+		int amount = GUI.getUserInteger(Translator.getString("NUMBEROFPLAYERS"));
 		setupPlayers(amount);
+		//GUI.addPlayer("Test", 0);
+		setupPlayer("Test");
+		for (int i = 0; i < slots.getFieldCount(); i++) {
+			slots.Field f = slots.getField(i);
+			
+			if(f instanceof Ownable)
+			{
+				((Ownable)f).setOwner(players.get(0));
+			}
+		}
+	
+		GUI.showMessage("HI!");
+		/*setupPlayers(amount);
 		boolean running = true;
 		while(running)
 		{
@@ -117,11 +132,14 @@ public class Board {
 				tempDice.rollDice();
 				AdvanceGame(tempDice);
 				if(currentPlayer.getPoints() >= 3000){
+				
 					break;
 				}
+				*/
 				/*When tempDice.result is equal to 10, it results in 8 (see tempResult), 
 				 * so the player lands on array[8], which gives another turn.
 				 */
+		/*
 				else if(tempDice.result() == 10){
 					GUI.getUserButtonPressed(currentPlayer.getName() + " " + Translator.getString("EXTRATURN"), Translator.getString("OK"));
 					continue;
@@ -142,7 +160,8 @@ public class Board {
 				running = false;
 			}
 		}
-		GUI.close();
+		*/
+		//GUI.close();
 
 	}
 	public static void main(String[] args) {

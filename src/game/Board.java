@@ -60,11 +60,11 @@ public class Board {
 			String user;
 			if(players.isEmpty())
 			{
-				 user = GUI.getUserString("ENTERNAME1");
+				 user = GUI.getUserString(Translator.getString("ENTERNAME1"));
 			}
 			else
 			{
-				user = GUI.getUserString("ENTERNAME2");
+				user = GUI.getUserString(Translator.getString("ENTERNAME2"));
 			}
 		while(setupPlayer(user) == false) {
 			user = GUI.getUserString("NAMEERROR");

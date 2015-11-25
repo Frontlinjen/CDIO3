@@ -2,6 +2,7 @@ package game;
 
 import java.awt.Color;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
 
@@ -92,13 +93,21 @@ public class Board {
 		}
 	}
 
-	private void AdvanceGame(BaseDice dice)
+	private void advanceGame()
 	{
-		int tempResult = dice.result()-2;
-		GUI.removeAllCars(currentPlayer.getName());
-		GUI.setCar(tempResult+1, currentPlayer.getName());
-		//currentPlayer.addPoints(slot[tempResult].getValue());
-		fields[tempResult].displayOnCenter();
+		while(players.size() > 1) {
+			currentPlayer.move(currentPlayer.getDice().rollDice().getSum());
+			GUI.removeAllCars(currentPlayer.getName());
+			GUI.setCar(currentPlayer.getPosition(), currentPlayer.getName());
+			slots.getField(currentPlayer.getPosition()).landOnField(currentPlayer);
+			if (currentPlayer.getAccount().getGold() <= 0) {
+				Iterator<Ownable> iterator = currentPlayer.getProperty().getPropertiesOwned();
+				while(iterator.hasNext()){
+					iterator.next().removeOwner();
+				}
+			}
+			swapPlayers();
+		}
 	}
 	
 	public void startGame(){

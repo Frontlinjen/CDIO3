@@ -17,7 +17,7 @@ public class Tax extends Field{
 
 	@Override
 	public void landOnField(Player player) {
-		if (GUI.getUserLeftButtonPressed(Translator.getString(getDescription()), Translator.getString("YES"), Translator.getString("NO"))) {
+		if (GUI.getUserLeftButtonPressed(getDescription(), Translator.getString("YES"), Translator.getString("NO"))) {
 			player.getAccount().withdraw((player.getAccount().getGold()/10));
 		}
 		else {

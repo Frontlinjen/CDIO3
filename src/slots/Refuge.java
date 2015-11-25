@@ -21,7 +21,7 @@ public class Refuge extends Field{
 	}
 	@Override
 	public desktop_fields.Field pushToGUI(int position){
-		desktop_fields.Field refuge = new desktop_fields.Refuge.Builder().build();
+		desktop_fields.Refuge refuge = new desktop_fields.Refuge.Builder().build();
 		refuge.setDescription(this.getDescription());
 		refuge.setTitle(this.getName());
 		refuge.setSubText(this.bonus+"");

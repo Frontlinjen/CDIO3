@@ -71,6 +71,7 @@ public class Board {
 			user = GUI.getUserString("NAMEERROR");
 		}
 		}
+		currentPlayer = players.get(0);
 	}
 
 	/**
@@ -96,15 +97,20 @@ public class Board {
 	private void advanceGame()
 	{
 		while(players.size() > 1) {
-			currentPlayer.move(currentPlayer.getDice().rollDice().getSum());
+			GUI.getUserButtonPressed(Translator.getString("NEXTTURN", currentPlayer.getName()), Translator.getString("ROLL"));
+			DiceResult res = currentPlayer.getDice().rollDice();
+			currentPlayer.move(res.getSum());
 			GUI.removeAllCars(currentPlayer.getName());
 			GUI.setCar(currentPlayer.getPosition(), currentPlayer.getName());
+			GUI.setDice(res.getDice(0), res.getDice(1));
 			slots.getField(currentPlayer.getPosition()).landOnField(currentPlayer);
 			if (currentPlayer.getAccount().getGold() <= 0) {
 				Iterator<Ownable> iterator = currentPlayer.getProperty().getPropertiesOwned();
 				while(iterator.hasNext()){
 					iterator.next().removeOwner();
 				}
+				GUI.getUserString(Translator.getString("LOSINGPLAYER", currentPlayer.getName()));
+				players.remove(currentPlayer);
 			}
 			swapPlayers();
 		}
@@ -116,6 +122,7 @@ public class Board {
 		int amount = GUI.getUserInteger(Translator.getString("NUMBEROFPLAYERS"));
 		setupPlayers(amount);
 		//GUI.addPlayer("Test", 0);
+		/*
 		setupPlayer("Test");
 		for (int i = 0; i < slots.getFieldCount(); i++) {
 			slots.Field f = slots.getField(i);
@@ -127,6 +134,8 @@ public class Board {
 		}
 	
 		GUI.showMessage("HI!");
+		*/
+		advanceGame();
 		/*setupPlayers(amount);
 		boolean running = true;
 		while(running)

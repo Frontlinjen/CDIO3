@@ -4,7 +4,7 @@ package game;
 public class Player {
 	
 	private String name;
-	private int position;
+	private int position = 0;
 	/**
 	 * Each player has their own set of dice which keeps track of their rolls. 
 	 */
@@ -50,7 +50,7 @@ public class Player {
 		final int ANTALSLOTS = 21;
 		position =+ afstand; //l�g den flyttede afstand til den gamle position
 		
-		if(position >= ANTALSLOTS){ //Bestem om den nye position er overskrider spillepladen. Hvis den g�r tr�kker man antallet af pladser fra positionen for at finde den nye position
+		if(position > ANTALSLOTS){ //Bestem om den nye position er overskrider spillepladen. Hvis den g�r tr�kker man antallet af pladser fra positionen for at finde den nye position
 			position =- ANTALSLOTS;
 		}
 	}

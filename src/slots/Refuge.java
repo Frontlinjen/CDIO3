@@ -1,5 +1,7 @@
 package slots;
 
+import java.awt.Color;
+
 import game.Player;
 import slots.Field.Types;
 
@@ -23,7 +25,7 @@ public class Refuge extends Field{
 	@Override
 	public desktop_fields.Field pushToGUI(int position){
 		this.position = position;
-		refuge = new desktop_fields.Refuge.Builder().build();
+		refuge = new desktop_fields.Refuge.Builder().setBgColor(Color.YELLOW).build();
 		refuge.setDescription(this.getDescription());
 		refuge.setTitle(this.getName());
 		refuge.setSubText(this.bonus+"");

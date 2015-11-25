@@ -68,7 +68,7 @@ public class Board {
 				user = GUI.getUserString(Translator.getString("ENTERNAME2"));
 			}
 		while(setupPlayer(user) == false) {
-			user = GUI.getUserString("NAMEERROR");
+			user = GUI.getUserString(Translator.getString("NAMEERROR"));
 		}
 		}
 		currentPlayer = players.get(0);
@@ -103,14 +103,16 @@ public class Board {
 			GUI.removeAllCars(currentPlayer.getName());
 			GUI.setCar(currentPlayer.getPosition(), currentPlayer.getName());
 			GUI.setDice(res.getDice(0), res.getDice(1));
-			slots.getField(currentPlayer.getPosition()).landOnField(currentPlayer);
+			//Board goes from 1-21, while our array goes from 0-20, hence we subtract 1
+			slots.getField(currentPlayer.getPosition()-1).landOnField(currentPlayer);
 			if (currentPlayer.getAccount().getGold() <= 0) {
 				Iterator<Ownable> iterator = currentPlayer.getProperty().getPropertiesOwned();
 				while(iterator.hasNext()){
 					iterator.next().removeOwner();
 				}
-				GUI.getUserString(Translator.getString("LOSINGPLAYER", currentPlayer.getName()));
+				GUI.showMessage(Translator.getString("LOSINGPLAYER", currentPlayer.getName()));
 				players.remove(currentPlayer);
+				GUI.removeAllCars(currentPlayer.getName());
 			}
 			swapPlayers();
 		}

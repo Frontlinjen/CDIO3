@@ -3,8 +3,8 @@ package game;
 import java.util.Random;
 
 public class ShuffleBag<T> {
-	T[] values;
-	int currentPos;
+	private T[] values;
+	private int currentPos;
 	Random rng = new Random(System.currentTimeMillis());
 	public ShuffleBag(T[] values)
 	{

@@ -53,7 +53,7 @@ public class Account {
 	}
 	
 	public void removeGold(int gold){
-		setGold(gold-getGold());
+		setGold(getGold()-gold);
 	}
 	
 	@Override

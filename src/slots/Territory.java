@@ -36,6 +36,6 @@ public class Territory extends Ownable{
 		territory.setDescription(this.getDescription());
 		territory.setTitle(this.getName());
 		territory.setSubText(this.price+"");
-		return null;
+		return territory;
 	}
 }

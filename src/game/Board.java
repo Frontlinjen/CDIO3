@@ -6,6 +6,7 @@ import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import desktop_codebehind.Car;
 import desktop_fields.Tax;
 import desktop_resources.GUI;
 import slots.Ownable;
@@ -16,6 +17,7 @@ public class Board {
 	private List<Player> players = new ArrayList<Player>();
 	private final int PLAYERSTARTINGCASH = 30000;
 	private Player currentPlayer;
+	private ShuffleBag<Color> availableCarColors = new ShuffleBag<Color>(new Color[]{Color.BLUE, Color.YELLOW, new Color(0, 107f/255, 15f/255), Color.PINK, Color.RED, Color.MAGENTA});
 	
 	public Player getCurrentPlayer()
 	{
@@ -25,7 +27,31 @@ public class Board {
 	{
 		Player newPlayer = new Player(name);
 		players.add(newPlayer);
-		GUI.addPlayer(name, PLAYERSTARTINGCASH);
+		Color color = Color.white;
+		try {
+			color = availableCarColors.getNext();
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		Car car;
+		int result = (int)((Math.random())*3+1);
+		if(result == 1)
+		{
+			car = new Car.Builder().primaryColor(color).secondaryColor(Color.black).patternZebra().build();
+
+		}
+		else if(result == 2)
+		{
+			car = new Car.Builder().primaryColor(color).secondaryColor(Color.black).patternDotted().build();
+		}
+		else
+		{
+			car = new Car.Builder().primaryColor(color).secondaryColor(Color.black).patternCheckered().build();
+		}
+		GUI.addPlayer(name, PLAYERSTARTINGCASH, car);
+
 		desktop_board.Board.getInstance().updatePlayers();
 	}
 	private boolean verifyName(String s)

@@ -35,7 +35,7 @@ public class LaborCamp extends Ownable{
 			if(getOwner()!=player)
 			{
 //				baseRent = player.getDice().rollDice().getSum() * 100 * player.getProperty().getLaborCampOwned();
-				GUI.getUserSelection(Translator.getString("LABORCAMP"), Translator.getString("ROLL"));
+				GUI.getUserButtonPressed(Translator.getString("LABORCAMP"), Translator.getString("ROLL"));
 				DiceResult res = player.getDice().rollDice();
 				int price = res.getSum() * 100 * getOwner().getProperty().getLaborCampOwned();
 				GUI.setDice(res.getDice(0), 3, 7, res.getDice(1), 4,8);

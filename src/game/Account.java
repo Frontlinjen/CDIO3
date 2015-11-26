@@ -29,6 +29,10 @@ public class Account {
 		removeGold(gold);
 		return true;
 	}
+	/**
+	 * Sets the balance in the account, also updates the GUI to the new amount
+	 * @param gold How much gold the account should be set to
+	 */
 	public void setGold(int gold) {
 		this.gold = gold;
 		if(getGold()<0)
@@ -37,7 +41,14 @@ public class Account {
 		}
 		GUI.setBalance(ownerName, getGold());
 	}
-	
+	/**
+	 * Transfers as much money as possible to the other account. If the balance is too low
+	 * then the reminder of the money is transfered and the account goes to 0.
+	 * @param other
+	 * The other account to transfer money to
+	 * @param amount
+	 * how much money should be transfered 
+	 */
 	public void transferTo(Account other, int amount){
 		if((getGold()-amount)<=0){
 			other.addGold(getGold());
@@ -58,6 +69,6 @@ public class Account {
 	
 	@Override
 	public String toString() {
-		return "Currently contains: " + gold + " gold";
+		return ownerName + "'s account currently contains: " + gold + " gold";
 	}
 }

@@ -29,6 +29,7 @@ public class LaborCamp extends Ownable{
 
 	@Override 
 	public void landOnField(Player player) {
+		LaborCamp.displayOnCenter();
 		if(hasOwner()){
 			if(getOwner()!=player)
 			{

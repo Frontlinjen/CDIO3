@@ -34,6 +34,7 @@ public class Territory extends Ownable{
 			}
 		}else{
 			if(BuyField(player)){
+				GUI.showMessage(Translator.getString("BOUGHTFIELD", getName(), price));
 			}
 		}
 	}

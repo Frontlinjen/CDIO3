@@ -1,45 +1,36 @@
 package Test;
-import game.BaseDice;
-import game.Player;
+import game.*;
 import static org.junit.Assert.*;
 
 import org.junit.Test;
 
+import game.Player;
+
 public class PlayerTest {
 
 	@Test
-	public void testPlayer() {
-		Player player = new Player("Sara");
-		assertTrue(1000 == player.getPoints());
-		assertTrue("Sara"==player.getName());
+	public void testGetAccount() {
+		Player player = new Player("Sheep");
+		assertTrue("Fail, the player should have 30000 gold to start with.", player.getAccount().getGold()==30000);
 	}
 
 	@Test
-	public void testSetPoints() {
-		Player player = new Player("Sara");
-		player.setPoints(1500);
-		assertTrue(1500 == player.getPoints());
-		//Tester at brugerens acc ikke går i negativ
-		player.setPoints(-500);
-		assertFalse(player.getPoints()==-500);
+	public void testGetProperty() {
+		Player player = new Player("Sheep");
+		assertTrue("Fail, A player should not own anything at the start of the game.", player.getProperty().getFleetOwned() == 0 && player.getProperty().getLaborCampOwned() == 0);
 	}
 
 	@Test
-	public void testGetDice() {
-		Player player = new Player("Sara");
-		BaseDice dice = player.getDice();
-		assertTrue(dice!=null);
-		dice.rollDice();
-		assertTrue(dice.result() != 0);
-
+	public void testMove() {
+		Player player = new Player("Sheep");
+		player.move(22);
+		assertTrue("Fail, the player should be on the first",player.getPosition()==1);
 	}
 
 	@Test
-	public void testCorrectPoints(){
-		Player player1 = new Player("Sara1");
-		Player player2 = new Player("Sara2");
-		player1.setPoints(650);
-		assertFalse(650 == player2.getPoints());
-
+	public void testGetPosition() {
+		Player player = new Player("Sheep");
+		assertTrue("Fail, the player should not have a position without having had a turn", player.getPosition()==0);
 	}
+
 }

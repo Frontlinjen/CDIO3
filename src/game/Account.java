@@ -5,7 +5,7 @@ import desktop_resources.GUI;
 public class Account {	
 	private int gold = 0;
 	private String ownerName;
-	Account(int balance, String name)
+	public Account(int balance, String name)
 	{
 		ownerName = name;
 		gold = balance;

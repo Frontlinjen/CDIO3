@@ -28,7 +28,7 @@ public class Board {
 		GUI.addPlayer(name, PLAYERSTARTINGCASH);
 		desktop_board.Board.getInstance().updatePlayers();
 	}
-	boolean verifyName(String s)
+	private boolean verifyName(String s)
 	{
 		if(s.isEmpty())
 		{

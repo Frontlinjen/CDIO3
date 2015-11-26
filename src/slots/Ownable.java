@@ -32,13 +32,16 @@ public abstract class Ownable extends Field{
 		//desktop_codebehind.Player player = desktop_board.Board.getInstance().getPlayer(owner.getName());
 		GUI.setOwner(getPosition(), owner.getName());
 	}
-	
-	public boolean checkOwner(Player visitor){
-		if(getOwner()!=null && getOwner()!=visitor)
-			return true;
-		
-			return false;
+	public boolean hasOwner()
+	{
+		return(getOwner()!=null);
 	}
+//	public boolean checkOwner(Player visitor){
+//		if(getOwner()!=null && getOwner()!=visitor)
+//			return true;
+//		
+//			return false;
+//	}
 	
 	public boolean BuyField (Player visitor){
 		if(GUI.getUserLeftButtonPressed(Translator.getString("BUYFIELD", price), Translator.getString("YES"), Translator.getString("NO"))){

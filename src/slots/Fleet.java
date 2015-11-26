@@ -48,9 +48,12 @@ public class Fleet extends Ownable{
 
 	@Override
 	public void landOnField(Player player) {
-		if(checkOwner(player)){
-			GUI.showMessage(Translator.getString("PAYTHEOWNER", getRent()));
-			player.getAccount().transferTo(getOwner().getAccount(), getRent());
+		if(hasOwner()){
+			if(getOwner()!=player)
+			{
+				GUI.showMessage(Translator.getString("PAYTHEOWNER", getRent()));
+				player.getAccount().transferTo(getOwner().getAccount(), getRent());
+			}	
 		}else{
 			if(BuyField(player)){
 				player.getProperty().expandFleet();

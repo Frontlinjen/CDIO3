@@ -54,7 +54,9 @@ public class Fleet extends Ownable{
 			{
 				GUI.showMessage(Translator.getString("PAYTHEOWNER", getRent()));
 				player.getAccount().transferTo(getOwner().getAccount(), getRent());
-			}	
+			}else{
+				GUI.showMessage(Translator.getString("YOURFIELD"));
+			}
 		}else{
 			if(BuyField(player)){
 				player.getProperty().expandFleet();

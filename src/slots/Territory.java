@@ -31,6 +31,8 @@ public class Territory extends Ownable{
 			{
 				GUI.showMessage(Translator.getString("PAYTHEOWNER", rent));
 				player.getAccount().transferTo(getOwner().getAccount(), rent);
+			}else{
+				GUI.showMessage(Translator.getString("YOURFIELD"));
 			}
 		}else{
 			if(BuyField(player)){

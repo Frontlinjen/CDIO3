@@ -41,6 +41,8 @@ public class LaborCamp extends Ownable{
 				GUI.setDice(res.getDice(0), 3, 7, res.getDice(1), 4,8);
 				GUI.showMessage(Translator.getString("LABORCAMPCONCLUSION", res.getSum(), price));
 				player.getAccount().transferTo(getOwner().getAccount(), price);
+			}else{
+				GUI.showMessage(Translator.getString("YOURFIELD"));
 			}
 		}else{
 			if(BuyField(player)){

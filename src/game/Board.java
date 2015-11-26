@@ -102,7 +102,7 @@ public class Board {
 			currentPlayer.move(res.getSum());
 			GUI.removeAllCars(currentPlayer.getName());
 			GUI.setCar(currentPlayer.getPosition(), currentPlayer.getName());
-			GUI.setDice(res.getDice(0), res.getDice(1));
+			GUI.setDice(res.getDice(0), 3, 7, res.getDice(1), 4,8);
 			//Board goes from 1-21, while our array goes from 0-20, hence we subtract 1
 			slots.getField(currentPlayer.getPosition()-1).landOnField(currentPlayer);
 			if (currentPlayer.getAccount().getGold() <= 0) {

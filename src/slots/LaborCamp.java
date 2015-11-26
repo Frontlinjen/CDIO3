@@ -39,6 +39,7 @@ public class LaborCamp extends Ownable{
 		}else{
 			if(BuyField(player)){
 				player.getProperty().expandLaborCamp();
+				GUI.showMessage(Translator.getString("BOUGHTFIELD", getName(), price));
 			}	
 		}
 	}

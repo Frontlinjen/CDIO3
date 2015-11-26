@@ -6,6 +6,7 @@ import javax.management.DescriptorKey;
 
 import desktop_resources.GUI;
 import slots.Ownable;
+import game.DiceResult;
 import game.Player;
 import game.Translator;
 import slots.Field.Types;
@@ -33,9 +34,12 @@ public class LaborCamp extends Ownable{
 		if(hasOwner()){
 			if(getOwner()!=player)
 			{
-				baseRent = player.getDice().rollDice().getSum() * 100 * player.getProperty().getLaborCampOwned();
-				GUI.showMessage(Translator.getString("PAYTHEOWNER", baseRent));
-				player.getAccount().transferTo(getOwner().getAccount(), baseRent);
+//				baseRent = player.getDice().rollDice().getSum() * 100 * player.getProperty().getLaborCampOwned();
+				GUI.showMessage(Translator.getString("LABORCAMP"));
+				GUI.showMessage(Translator.getString("ROLL"));
+				DiceResult res = player.getDice().rollDice();
+				GUI.setDice(res.getDice(0), 3, 7, res.getDice(1), 4,8);
+				player.getAccount().transferTo(getOwner().getAccount(), (res.getDice(0)+res.getDice(1))*100*player.getProperty().getLaborCampOwned());
 			}
 		}else{
 			if(BuyField(player)){

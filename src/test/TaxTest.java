@@ -20,7 +20,7 @@ public class TaxTest {
 		player.move(1);
 		tax.landOnField(player);
 		
-		equals(player.getAccount().getGold()== 27000 || player.getAccount().getGold()== 29000);
+		assertTrue(player.getAccount().getGold()== 27000 || player.getAccount().getGold()== 29000);
 	}
 
 }

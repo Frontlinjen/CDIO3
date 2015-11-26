@@ -32,7 +32,7 @@ public class Refuge extends Field{
 		refuge = new desktop_fields.Street.Builder().setBgColor(new Color(223f/255, 255f/255, 43f/255)).build();
 		refuge.setDescription(this.getDescription());
 		refuge.setTitle(this.getName());
-		refuge.setSubText(this.bonus+"");
+		refuge.setSubText("Payout: " + this.bonus);
 		return refuge;
 	}
 	

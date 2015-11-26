@@ -20,7 +20,7 @@ public class Tax extends Field{
 	@Override
 	public void landOnField(Player player) {
 		tax.displayOnCenter();
-		if (GUI.getUserLeftButtonPressed(getDescription(), Translator.getString("YES"), Translator.getString("NO"))) {
+		if (GUI.getUserLeftButtonPressed(getDescription(), Translator.getString("TAX%"), Translator.getString("TAXCASH",taxAmount))) {
 			player.getAccount().withdraw((player.getAccount().getGold()/10));
 		}
 		else {

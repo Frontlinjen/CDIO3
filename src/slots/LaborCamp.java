@@ -35,7 +35,7 @@ public class LaborCamp extends Ownable{
 			if(getOwner()!=player)
 			{
 //				baseRent = player.getDice().rollDice().getSum() * 100 * player.getProperty().getLaborCampOwned();
-				GUI.getUserButtonPressed(Translator.getString("LABORCAMP"), Translator.getString("ROLL"));
+				GUI.getUserButtonPressed(Translator.getString("LABORCAMP", baseRent), Translator.getString("ROLL"));
 				DiceResult res = player.getDice().rollDice();
 				int price = res.getSum() * 100 * getOwner().getProperty().getLaborCampOwned();
 				GUI.setDice(res.getDice(0), 3, 7, res.getDice(1), 4,8);
@@ -54,7 +54,7 @@ public class LaborCamp extends Ownable{
 	public desktop_fields.Field pushToGUI(int position){
 
 		this.position = position;
-		LaborCamp = new desktop_fields.Street.Builder().setRent(baseRent+"*dice").setBgColor(new Color(255f/255, 165f/255, 48f/255)).build();
+		LaborCamp = new desktop_fields.Street.Builder().setRent(Translator.getString("LABORCAMPRENT", baseRent)).setBgColor(new Color(255f/255, 165f/255, 48f/255)).build();
 		LaborCamp.setDescription(this.getDescription());
 		LaborCamp.setTitle(this.getName());
 		

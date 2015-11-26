@@ -22,6 +22,7 @@ public class Refuge extends Field{
 
 	@Override
 	public void landOnField(Player player) {
+		refuge.displayOnCenter();
 		GUI.showMessage(Translator.getString("LANDONREFUGE", bonus));
 		player.getAccount().addGold(bonus);		
 	}

@@ -48,6 +48,7 @@ public class Fleet extends Ownable{
 
 	@Override
 	public void landOnField(Player player) {
+		fleet.displayOnCenter();
 		if(hasOwner()){
 			if(getOwner()!=player)
 			{

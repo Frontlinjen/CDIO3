@@ -1,4 +1,4 @@
-package Test;
+package test;
 
 import game.BaseDice;
 import game.DicePair;

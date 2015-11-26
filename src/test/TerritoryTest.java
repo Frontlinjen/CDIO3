@@ -17,7 +17,6 @@ public class TerritoryTest {
 
 		Player player = new Player("Test");
 		Player player2 = new Player("Test2");
-		player.getName();
 
 		territory.pushToGUI(1);
 		player.move(1);

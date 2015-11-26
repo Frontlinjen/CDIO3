@@ -42,7 +42,7 @@ public class Territory extends Ownable{
 	@Override
 	public desktop_fields.Field pushToGUI(int position) {
 		this.position = position;
-		territory = new desktop_fields.Street.Builder().setRent(rent+"").setBgColor(Color.GREEN).build();
+		territory = new desktop_fields.Street.Builder().setRent(rent+"").setBgColor(new Color(68f/255, 255f/255, 43f/255)).build();
 		territory.setDescription(this.getDescription());
 		territory.setTitle(this.getName());
 		territory.setSubText(this.price+"");

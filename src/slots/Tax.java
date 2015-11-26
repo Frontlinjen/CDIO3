@@ -31,7 +31,7 @@ public class Tax extends Field{
 	@Override
 	public desktop_fields.Field pushToGUI(int position) {
 		this.position = position;
-		tax = new desktop_fields.Tax.Builder().setBgColor(Color.RED).build();
+		tax = new desktop_fields.Tax.Builder().setBgColor(new Color(255f/255, 43f/255, 57f/255)).build();
 		tax.setDescription(this.getDescription());
 		tax.setTitle(this.getName());
 		tax.setSubText(taxAmount + "");

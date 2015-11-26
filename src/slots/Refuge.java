@@ -11,7 +11,7 @@ public class Refuge extends Field{
 
 
 	private int bonus;
-	desktop_fields.Refuge refuge; 
+	desktop_fields.Street refuge; 
 	
 	
 	public Refuge(int i, Types type, int bonus) {
@@ -29,7 +29,7 @@ public class Refuge extends Field{
 	@Override
 	public desktop_fields.Field pushToGUI(int position){
 		this.position = position;
-		refuge = new desktop_fields.Refuge.Builder().setBgColor(Color.YELLOW).build();
+		refuge = new desktop_fields.Street.Builder().setBgColor(new Color(223f/255, 255f/255, 43f/255)).build();
 		refuge.setDescription(this.getDescription());
 		refuge.setTitle(this.getName());
 		refuge.setSubText(this.bonus+"");

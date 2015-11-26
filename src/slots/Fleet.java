@@ -66,7 +66,7 @@ public class Fleet extends Ownable{
 	@Override
 	public desktop_fields.Field pushToGUI(int position) {
 		this.position = position;
-		fleet = new desktop_fields.Street.Builder().setRent(String.format("%d, %d, %d, %d", RENT_1, RENT_2, RENT_3, RENT_4)).setBgColor(Color.BLUE).build();
+		fleet = new desktop_fields.Street.Builder().setRent(String.format("%d, %d, %d, %d", RENT_1, RENT_2, RENT_3, RENT_4)).setBgColor(new Color(144f/255,211f/255, 212f/255)).build();
 		fleet.setTitle(getName());
 		fleet.setDescription(getDescription());
 		fleet.setSubText("" + price);

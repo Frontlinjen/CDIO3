@@ -47,7 +47,7 @@ public class LaborCamp extends Ownable{
 	public desktop_fields.Field pushToGUI(int position){
 
 		this.position = position;
-		LaborCamp = new desktop_fields.Street.Builder().setRent(baseRent+"*dice").setBgColor(Color.GRAY).build();
+		LaborCamp = new desktop_fields.Street.Builder().setRent(baseRent+"*dice").setBgColor(new Color(255f/255, 165f/255, 48f/255)).build();
 		LaborCamp.setDescription(this.getDescription());
 		LaborCamp.setTitle(this.getName());
 		

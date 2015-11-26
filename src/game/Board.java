@@ -129,7 +129,7 @@ public class Board {
 			
 			amount = GUI.getUserInteger(Translator.getString("NUMBEROFPLAYERS"));	
 		}
-			setupPlayers(amount);
+		setupPlayers(amount);
 		//GUI.addPlayer("Test", 0);
 		/*
 		setupPlayer("Test");
@@ -145,6 +145,9 @@ public class Board {
 		GUI.showMessage("HI!");
 		*/
 		advanceGame();
+		
+		GUI.showMessage(Translator.getString("WINNINGPLAYERNAME", currentPlayer.getName(), currentPlayer.getAccount().getGold()));
+		GUI.close();
 		/*setupPlayers(amount);
 		boolean running = true;
 		while(running)

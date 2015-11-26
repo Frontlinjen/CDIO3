@@ -32,5 +32,9 @@ public class DiceResult
 		
 		return sumOfDice;
 	}
+	
+	public int getDiceAmount(){
+		return dice.length;
+	}
 }
 

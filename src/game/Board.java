@@ -13,7 +13,6 @@ import slots.Ownable;
 
 public class Board {
 	private GameBoard slots = new GameBoard();
-	private Tax[] fields;
 	private List<Player> players = new ArrayList<Player>();
 	private final int PLAYERSTARTINGCASH = 30000;
 	private Player currentPlayer;

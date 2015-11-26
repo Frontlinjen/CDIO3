@@ -34,11 +34,17 @@ public class AccountTest {
 	@Test
 	public void testAddGold() {
 		Account account = new Account(5000,"Sheep");
+		account.addGold(5000);
+		assertTrue("Fail, there should be 10000gold in the account",account.getGold()==10000);
 	}
 
 	@Test
 	public void testRemoveGold() {
 		Account account = new Account(5000,"Sheep");
+		account.removeGold(5000);
+		assertTrue("Fail, there should not be any gold in the account",account.getGold()==0);
+		account.removeGold(1);
+		assertFalse("Fail, you can have negativ gold",account.getGold()==-1);
 	}
 
 }

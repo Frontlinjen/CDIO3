@@ -14,7 +14,7 @@ public class Board {
 	private GameBoard slots = new GameBoard();
 	private Tax[] fields;
 	private List<Player> players = new ArrayList<Player>();
-	
+	private final int PLAYERSTARTINGCASH = 30000;
 	private Player currentPlayer;
 	
 	public Player getCurrentPlayer()
@@ -25,7 +25,7 @@ public class Board {
 	{
 		Player newPlayer = new Player(name);
 		players.add(newPlayer);
-		GUI.addPlayer(name, 30000);
+		GUI.addPlayer(name, PLAYERSTARTINGCASH);
 		desktop_board.Board.getInstance().updatePlayers();
 	}
 	boolean verifyName(String s)
@@ -122,7 +122,14 @@ public class Board {
 		System.out.println("Starting game..");
 		slots.initializeBoard();
 		int amount = GUI.getUserInteger(Translator.getString("NUMBEROFPLAYERS"));
-		setupPlayers(amount);
+		final int PLAYERAMOUNTMIN = 2;
+		final int PLAYERAMOUNTMAX = 6;
+		while(amount < PLAYERAMOUNTMIN || amount > PLAYERAMOUNTMAX){
+			GUI.showMessage(Translator.getString("NUMBEROFPLAYERSERROR",PLAYERAMOUNTMIN,PLAYERAMOUNTMAX));
+			
+			amount = GUI.getUserInteger(Translator.getString("NUMBEROFPLAYERS"));	
+		}
+			setupPlayers(amount);
 		//GUI.addPlayer("Test", 0);
 		/*
 		setupPlayer("Test");

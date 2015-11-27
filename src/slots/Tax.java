@@ -19,6 +19,10 @@ public class Tax extends Field{
 
 	@Override
 	public void landOnField(Player player) {
+		/**
+		 * Player lands on Tax and has to pay, either a flat amount or
+		 * a percentage of his fortune. 
+		 */
 		tax.displayOnCenter();
 		if (GUI.getUserLeftButtonPressed(Translator.getString("LANDONTAX"), Translator.getString("TAX%"), Translator.getString("TAXCASH",taxAmount))) {
 			player.getAccount().withdraw((player.getAccount().getGold()/10));

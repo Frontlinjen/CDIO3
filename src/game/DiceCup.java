@@ -15,7 +15,8 @@ public class DiceCup {
 	}
 		public DiceResult rollDice(){
 		
-/*	Inserts Ints into the array, depending on the amount of dice chosen
+/*	
+ * Inserts Ints into the array, depending on the amount of dice chosen
  * 	for the game. The array extends depending on the amount of dice
  * 	chosen. And spits out a random generated number for each array slot. 
  */

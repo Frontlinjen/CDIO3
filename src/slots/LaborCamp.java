@@ -63,4 +63,11 @@ public class LaborCamp extends Ownable{
 		//LaborCamp.setSubText(baseRent+"");
 		return LaborCamp;
 	}
+	
+	@Override
+	public String toString() {
+		return "LaborCamp [LaborCamp=" + LaborCamp + ", price=" + price + ", position=" + position
+				+ ", getRent()=" + getRent() + ", getOwner()=" + getOwner() + ", hasOwner()=" + hasOwner()
+				+ ", getName()=" + getName() + ", getPosition()=" + getPosition() + "]";
+	}
 }

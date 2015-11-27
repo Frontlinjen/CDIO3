@@ -59,4 +59,9 @@ public abstract class Ownable extends Field{
 		return false;
 		
 	}
+
+	@Override
+	public String toString() {
+		return "Ownable [price=" + price + ", owner=" + owner + "]";
+	}
 }

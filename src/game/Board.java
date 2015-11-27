@@ -1,10 +1,18 @@
 package game;
 
 import java.awt.Color;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
+
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import desktop_board.Center;
 import desktop_codebehind.Car;
 import desktop_resources.GUI;
 import slots.Ownable;
@@ -153,9 +161,16 @@ public class Board {
 		}
 		setupPlayers(amount);
 		advanceGame();
-		
+	
 		GUI.showMessage(Translator.getString("WINNINGPLAYERNAME", currentPlayer.getName(), currentPlayer.getAccount().getGold()));
-		GUI.close();
+		
+		Icon icon = new ImageIcon("C:\\Users\\Hjort\\Desktop\\GoodHorse.gif");
+		JLabel label = new JLabel(icon);
+		Center.getInstance().label[0].setIcon(icon);
+		Point p = Center.getInstance().label[0].getLocation();
+		p.y-=10;
+		Center.getInstance().label[0].setLocation(p);
+		//GUI.close();
 	}
 	public static void main(String[] args) {
 		Board board = new Board();

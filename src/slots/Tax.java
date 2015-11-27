@@ -38,4 +38,10 @@ public class Tax extends Field{
 		return tax;
 	}
 	
+	@Override
+	public String toString() {
+		return "Tax [taxAmount=" + taxAmount + ", tax=" + tax + ", position=" + position
+				+ ", getName()=" + getName() + ", getPosition()= " + getPosition() + "]";
+	}
+	
 }

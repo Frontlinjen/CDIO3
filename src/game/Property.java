@@ -6,7 +6,11 @@ import java.util.Iterator;
 import java.util.List;
 
 public class Property {
-
+/**
+ * Keeps track of how many fleets and laborcamps each player has.
+ * 'Expand' adds an additional fleet/laborcamp, when the plays buys on of them
+ */
+	
 	private int fleetOwned=0;
 	private int laborCampOwned=0;
 	private List<slots.Ownable> properties = new ArrayList<slots.Ownable>();

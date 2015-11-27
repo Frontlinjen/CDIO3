@@ -19,16 +19,12 @@ public class TerritoryTest {
 		Player player2 = new Player("Test2");
 
 		territory.pushToGUI(1);
-		player.move(1);
-		territory.landOnField(player);
-		player2.move(1);
+		player.getAccount().removeGold(2500);
+		territory.setOwner(player);
 		territory.landOnField(player2);
 		
 		assertTrue(
-				player.getAccount().getGold()== 28500 && player2.getAccount().getGold()== 29000 ||
-				player.getAccount().getGold()== 30000 && player2.getAccount().getGold()== 27500 ||
-				player.getAccount().getGold()== 30000 && player2.getAccount().getGold()== 30000 
-				);
+				player.getAccount().getGold()== 28500 && player2.getAccount().getGold()== 29000);
 		}
 
 }

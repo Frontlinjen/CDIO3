@@ -1,5 +1,6 @@
 package game;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class DiceCup {
@@ -19,4 +20,10 @@ public class DiceCup {
 			}
 			return new DiceResult(diceArray);
 		}
+		@Override
+		public String toString() {
+			return "DiceCup [diceArray=" + Arrays.toString(diceArray) + ", random Generator=" + rGen + ", rollDice()=" + rollDice()
+					+ "]";
+		}
+		
 }

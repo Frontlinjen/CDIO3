@@ -160,7 +160,7 @@ public class Board {
 			amount = GUI.getUserInteger(Translator.getString("NUMBEROFPLAYERS"));	
 		}
 		setupPlayers(amount);
-		advanceGame();
+		//advanceGame();
 	
 		GUI.showMessage(Translator.getString("WINNINGPLAYERNAME", currentPlayer.getName(), currentPlayer.getAccount().getGold()));
 		

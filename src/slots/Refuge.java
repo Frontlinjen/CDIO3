@@ -17,11 +17,11 @@ public class Refuge extends Field{
 	public Refuge(int i, Types type, int bonus) {
 		super(i, type);
 		this.bonus = bonus;
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public void landOnField(Player player) {
+		//Player lands on a refuge field and is given gold.
 		refuge.displayOnCenter();
 		GUI.showMessage(Translator.getString("LANDONREFUGE", bonus));
 		player.getAccount().addGold(bonus);		

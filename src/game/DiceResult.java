@@ -1,4 +1,7 @@
 package game;
+
+import java.util.Arrays;
+
 /*
  * A compact OO-way of storing the eyes of the two dices. Is mainly a storage class, but also has some utility functions. 
  */
@@ -35,6 +38,11 @@ public class DiceResult
 	
 	public int getDiceAmount(){
 		return dice.length;
+	}
+	@Override
+	public String toString() {
+		return "DiceResult [dice=" + Arrays.toString(dice) + ", getSum()=" + getSum() + ", getDiceAmount()="
+				+ getDiceAmount() +  "]";
 	}
 }
 

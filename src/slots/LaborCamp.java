@@ -19,23 +19,26 @@ public class LaborCamp extends Ownable{
 	public LaborCamp(int i, Types type, int price, int baseRent) {
 		super(i, type, price);
 		this.baseRent = baseRent;
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
 	public int getRent() {
-		// TODO Auto-generated method stub
 		return 0;
 	}
 
 	@Override 
 	public void landOnField(Player player) {
+		/**
+		 * Player lands on laborcamp.
+		 * If field is owned, he pays an amount depending on a roll with
+		 * two dice times the amount of labor camps owned by the owner.
+		 * If field is not owned, player can choose to buy it.
+		 */
 		LaborCamp.displayOnCenter();
 		if(hasOwner()){
 			if(getOwner()!=player)
 			{
-//				baseRent = player.getDice().rollDice().getSum() * 100 * player.getProperty().getLaborCampOwned();
-				GUI.getUserButtonPressed(Translator.getString("LABORCAMP", baseRent), Translator.getString("ROLL"));
+				GUI.getUserButtonPressed(Translator.getString("LABORCAMP"), Translator.getString("ROLL"));
 				DiceResult res = player.getDice().rollDice();
 				int price = res.getSum() * 100 * getOwner().getProperty().getLaborCampOwned();
 				GUI.setDice(res.getDice(0), 3, 7, res.getDice(1), 4,8);
@@ -60,7 +63,6 @@ public class LaborCamp extends Ownable{
 		
 		LaborCamp.setSubText(price+"");
 		
-		//LaborCamp.setSubText(baseRent+"");
 		return LaborCamp;
 	}
 	

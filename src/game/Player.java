@@ -2,7 +2,9 @@ package game;
 
 
 public class Player {
-	
+	/**
+	 * Holds all information about the player, including a reference to th account.
+	 */
 	private String name;
 	private int position = 0;
 	/**
@@ -35,20 +37,19 @@ public class Player {
 	{
 		return propertyOwned;
 	}
-
-
-	@SuppressWarnings("unused")
-	private Player()
-	{}
-
-	
 	
 	public void move (int afstand){
 		final int ANTALSLOTS = 21;
-		position += afstand; //l�g den flyttede afstand til den gamle position
+		position += afstand; 
+		//add the moved distance to the old position.
 		
-		if(position > ANTALSLOTS){ //Bestem om den nye position er overskrider spillepladen. Hvis den g�r tr�kker man antallet af pladser fra positionen for at finde den nye position
+		if(position > ANTALSLOTS){ 
 			position -= ANTALSLOTS;
+	/**
+	 * Decide wether or not the new position exeeds the board.
+	 * If it does, it take the amount of fields from the position
+	 * to find the new position.
+	 */
 		}
 	}
 	

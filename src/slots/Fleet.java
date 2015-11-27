@@ -21,10 +21,13 @@ public class Fleet extends Ownable{
 	
 	public Fleet(int i, Types type, int price) {
 		super(i, type, price);
-		// TODO Auto-generated constructor stub
 	}
 
 	@Override
+	/**
+	 * Considers how much the player should pay depending on how
+	 * many fleets the owner has.
+	 */
 	public int getRent() {
 	switch (getOwner().getProperty().getFleetOwned()){
 	case 1: {
@@ -48,7 +51,14 @@ public class Fleet extends Ownable{
 
 	@Override
 	public void landOnField(Player player) {
+		
 		fleet.displayOnCenter();
+		/**
+		 * Player lands on a fleet.
+		 * If the field is owned, the player pays the rent, 
+		 * which is determined by calling getRent.
+		 * If the field is not owned, he has the choice to buy it.
+		 */
 		if(hasOwner()){
 			if(getOwner()!=player)
 			{

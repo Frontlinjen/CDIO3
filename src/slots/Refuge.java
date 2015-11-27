@@ -36,4 +36,10 @@ public class Refuge extends Field{
 		return refuge;
 	}
 	
+	
+	@Override
+	public String toString() {
+		return "Refuge [refuge=" + refuge + ", bonus=" + bonus + ", position=" + position
+				+ ", getName()=" + getName() + ", getPosition()=" + getPosition() + "]";
+	}
 }

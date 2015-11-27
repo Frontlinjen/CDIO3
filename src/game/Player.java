@@ -58,7 +58,7 @@ public class Player {
 
 	@Override
 	public String toString() {
-		return "Player [, getName()=" + getName() + ", getAccount()=" + getAccount() + ", getProperty.count()=" + getProperty.count() + ", getPosition()="
+		return "Player [, getName()=" + getName() + ", getAccount()=" + getAccount() + ", getProperty().getPropertyCount()="+ getProperty().getPropertyCount() + ", getPosition()="
 				+ getPosition() + "]";
 	}
 }

@@ -41,10 +41,7 @@ public class Player {
 	private Player()
 	{}
 
-	@Override
-	public String toString() {
-		return "Playername : " + getName() + " " + account.getGold() + "gold";
-	}
+	
 	
 	public void move (int afstand){
 		final int ANTALSLOTS = 21;
@@ -57,6 +54,12 @@ public class Player {
 	
 	public int getPosition(){
 		return position;
+	}
+
+	@Override
+	public String toString() {
+		return "Player [, getName()=" + getName() + ", getAccount()=" + getAccount() + ", getProperty.count()=" + getProperty.count() + ", getPosition()="
+				+ getPosition() + "]";
 	}
 }
  

@@ -160,11 +160,11 @@ public class Board {
 			amount = GUI.getUserInteger(Translator.getString("NUMBEROFPLAYERS"));	
 		}
 		setupPlayers(amount);
-		//advanceGame();
+		advanceGame();
 	
 		GUI.showMessage(Translator.getString("WINNINGPLAYERNAME", currentPlayer.getName(), currentPlayer.getAccount().getGold()));
 		
-		Icon icon = new ImageIcon("C:\\Users\\Hjort\\Desktop\\GoodHorse.gif");
+		Icon icon = new ImageIcon("GoodHorse.gif");
 		JLabel label = new JLabel(icon);
 		Center.getInstance().label[0].setIcon(icon);
 		Point p = Center.getInstance().label[0].getLocation();

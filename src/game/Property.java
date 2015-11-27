@@ -20,7 +20,10 @@ public class Property {
 	{
 		properties.add(p);
 	}
-	
+	public int getPropertyCount()
+	{
+		return properties.size();
+	}
 	public int getLaborCampOwned()
 	{
 		return laborCampOwned;

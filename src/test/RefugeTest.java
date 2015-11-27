@@ -18,10 +18,9 @@ public class RefugeTest {
 		Player player = new Player("Test");
 
 		refuge.pushToGUI(1);
-		player.move(1);
 		refuge.landOnField(player);
 		
-		assertTrue(player.getAccount().getGold()== 25000 || player.getAccount().getGold()== 30000);
+		assertTrue(player.getAccount().getGold()== 35000);
 	}
 
 }

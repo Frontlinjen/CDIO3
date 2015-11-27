@@ -74,4 +74,11 @@ public class Fleet extends Ownable{
 		fleet.setSubText("" + price);
 		return fleet;
 	}
+	
+	@Override
+	public String toString() {
+		return "Fleet [Fleet=" + fleet + ", price=" + price + ", position=" + position
+				+ ", getRent()=" + getRent() + ", getOwner()=" + getOwner() + ", hasOwner()=" + hasOwner()
+				+ ", getName()=" + getName() + ", getPosition()=" + getPosition() + "]";
+	}
 }

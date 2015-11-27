@@ -1,13 +1,19 @@
 package game;
 
 import java.awt.Color;
+import java.awt.Point;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.regex.Pattern;
 
+import javax.swing.Icon;
+import javax.swing.ImageIcon;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+
+import desktop_board.Center;
 import desktop_codebehind.Car;
-import desktop_fields.Tax;
 import desktop_resources.GUI;
 import slots.Ownable;
 
@@ -154,69 +160,17 @@ public class Board {
 			amount = GUI.getUserInteger(Translator.getString("NUMBEROFPLAYERS"));	
 		}
 		setupPlayers(amount);
-		//GUI.addPlayer("Test", 0);
-		/*
-		setupPlayer("Test");
-		for (int i = 0; i < slots.getFieldCount(); i++) {
-			slots.Field f = slots.getField(i);
-			
-			if(f instanceof Ownable)
-			{
-				((Ownable)f).setOwner(players.get(0));
-			}
-		}
+		//advanceGame();
 	
-		GUI.showMessage("HI!");
-		*/
-		advanceGame();
-		
 		GUI.showMessage(Translator.getString("WINNINGPLAYERNAME", currentPlayer.getName(), currentPlayer.getAccount().getGold()));
-		GUI.close();
-		/*setupPlayers(amount);
-		boolean running = true;
-		while(running)
-		{
-			currentPlayer = players.get(0);
-			
-			while(true){
-
-				GUI.getUserButtonPressed(Translator.getString("NEXTTURN") + " " + currentPlayer.getName(), Translator.getString("ROLL"));
-
-				BaseDice tempDice = currentPlayer.getDice();
-				tempDice.rollDice();
-				AdvanceGame(tempDice);
-				if(currentPlayer.getPoints() >= 3000){
-				
-					break;
-				}
-				*/
-				/*When tempDice.result is equal to 10, it results in 8 (see tempResult), 
-				 * so the player lands on array[8], which gives another turn.
-				 */
-		/*
-				else if(tempDice.result() == 10){
-					GUI.getUserButtonPressed(currentPlayer.getName() + " " + Translator.getString("EXTRATURN"), Translator.getString("OK"));
-					continue;
-				}
-				else{
-					swapPlayers();
-				}	
-				
-			}
-			if(GUI.getUserLeftButtonPressed(currentPlayer.getName() + " " + Translator.getString("ENDGAMEBUTTON1"), Translator.getString("ENDGAMEBUTTON2"), Translator.getString("ENDGAMEBUTTON3"))) {
-				for(Player player : players) {
-					player.setPoints(1000);
-					GUI.removeAllCars(player.getName());
-				}
-
-			}
-			else {
-				running = false;
-			}
-		}
-		*/
+		
+		Icon icon = new ImageIcon("C:\\Users\\Hjort\\Desktop\\GoodHorse.gif");
+		JLabel label = new JLabel(icon);
+		Center.getInstance().label[0].setIcon(icon);
+		Point p = Center.getInstance().label[0].getLocation();
+		p.y-=10;
+		Center.getInstance().label[0].setLocation(p);
 		//GUI.close();
-
 	}
 	public static void main(String[] args) {
 		Board board = new Board();
